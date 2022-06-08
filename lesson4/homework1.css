@@ -1,0 +1,66 @@
+body {
+    direction: rtl;
+}
+
+.outerBox {
+    width: 300px;
+    height: 200px;
+    background-color: #dfdfdf;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+}
+
+.outerBox div {
+    width: 60px;
+    height: 40px;
+    background-color: blueviolet;
+    position: absolute;
+}
+
+#inner2 {
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#inner3 {
+    left: 0;
+}
+
+#inner4 {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#inner5 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#inner6 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#inner7 {
+    bottom: 0;
+}
+
+#inner8 {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#inner9 {
+    bottom: 0;
+    left: 0;
+}

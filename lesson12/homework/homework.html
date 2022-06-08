@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script - Home work</title>
+    <link rel="stylesheet" href="homework.css">
+    <script src="homework.js" defer></script>
+</head>
+
+<body>
+    <div id="frame">
+        <header>
+            <h1>שיעורי בית - תרגיל 11</h1>
+        </header>
+
+        <div class="card">
+            <p>א. יש לקלוט מספר ולבדוק האם הוא ראשוני</p>
+            <input type="number" id="num1">
+            <button onclick="checkIsPrime()">הצג</button>
+            <p id="output1"></p>
+        </div>
+
+        <div class="card">
+            <p>ב. יש לקלוט מספר ולהציג את כל המספרים הראשוניים מתחתיו.</p>
+            <input type="number" id="num2">
+            <button onclick="checkAllDownPrime()">הצג</button>
+            <p id="output2"></p>
+        </div>
+
+        <div class="card">
+            <p>ג. יש לקלוט מספר ולהציג את כל המספרים שמתחתיו הלא ראשוניים.</p>
+            <input type="number" id="num3">
+            <button onclick="checkAllDownIsNotPrime()">הצג</button>
+            <p id="output3"></p>
+        </div>
+
+        <div class="card">
+            <p>ד. יש לקלוט מספר ולהציג את כל המחלקים שלו.</p>
+            <input type="number" id="num4">
+            <button onclick="showAllDividers()">הצג</button>
+            <p id="output4"></p>
+        </div>
+
+        <div class="card">
+            <p>ז. יש ליצור את לוח הכפל בעזרת לולאות.</p>
+            <button onclick="createMultiBoard()">הצג</button>
+            <p id="multiBoard"></p>
+        </div>
+
+        <div class="card">
+            <p>ח. יש לקלוט מספר והצג את סכום הספרות שלו.</p>
+            <input type="number" id="num5">
+            <button onclick="sumNumber()">הצג</button>
+            <p id="output5"></p>
+        </div>
+
+        <div class="card">
+            <p>ט. יש לקלוט אורך ורוחב מלבן, הצג את אורך המלבן ואת ההיקף שלו.</p>
+            <input type="number" id="num6">
+            <input type="number" id="num7">
+            <button onclick="showDiv()">הצג</button>
+            <div id="output6"></div>
+        </div>
+    </div>
+</body>
+
+</html>

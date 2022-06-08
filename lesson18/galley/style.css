@@ -1,0 +1,73 @@
+body {
+    direction: rtl;
+}
+
+#gallery {
+    width: 500px;
+}
+
+#gallery img {
+    width: 100%;
+    display: none;
+}
+
+.frame {
+    width: 500px;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 62px;
+    background-color: #0000009e;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 28px;
+    display: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+.frame:hover .btn {
+    display: initial;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.center {
+    right: 0;
+    left: 0;
+    width: 64px;
+}
+
+aside {
+    width: 100px;
+    position: absolute;
+}
+
+aside img {
+    width: 100%;
+}
+
+.current {
+    border: 3px solid #3f51b5;
+    width: 130%;
+    border-radius: 8px;
+}

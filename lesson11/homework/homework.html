@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script - Home work</title>
+    <link rel="stylesheet" href="homework.css">
+    <script src="homework.js" defer></script>
+</head>
+
+<body>
+    <div id="frame">
+        <header>
+            <h1>שיעורי בית - תרגיל 10</h1>
+        </header>
+
+        <div class="card">
+            <p>ב. יש לקלוט מספר ולהציג ב-div את כל המספרים הזוגיים שמתחתיו.</p>
+            <input type="number" id="num1">
+            <button onclick="showEvens()">הצג</button>
+            <p id="output1"></p>
+        </div>
+
+        <div class="card">
+            <p>ג. יש לקלוט מספר ולחשב את העצרת שלו ולכתוב את התרגיל עצמו.</p>
+            <input type="number" id="num2">
+            <button onclick="showFactorial()">הצג</button>
+            <p id="output2"></p>
+        </div>
+
+        <div class="card">
+            <p>סעיפים ה'-ח'</p>
+            <p id="numbers"></p>
+            <button onclick="big()">המספר הגדול</button>
+            <button onclick="small()">המספר הקטן</button>
+            <button onclick="sum()">סכום</button>
+            <button onclick="avg()">ממוצע</button>
+            <p id="output3"></p>
+        </div>
+
+        <div class="card">
+            <p>סעיפי אתגר</p>
+            <button onclick="showList()">הצג רשימה</button>
+            <button onclick="showChecked()">הצג נבחרים</button>
+
+            <ul id="list"></ul>
+        </div>
+
+        <div class="card">
+            <p>לוח הכפל</p>
+            <button onclick="createMultiBoard()">צור</button>
+
+            <div id="multiBoard"></div>
+        </div>
+    </div>
+</body>
+
+</html>

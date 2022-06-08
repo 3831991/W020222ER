@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>טפסים</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <div class="frame">
+        <header>
+            <h1>טופס להזמנת פיצה</h1>
+        </header>
+
+        <form action="formData.html" method="POST">
+            <div class="field">
+                <label>שם פרטי:</label> <br>
+                <input type="text" name="firstName" required>
+            </div>
+
+            <div class="field">
+                <label>שם משפחה:</label> <br>
+                <input type="text" name="lastName">
+            </div>
+
+            <div class="field">
+                <label>סיסמה:</label> <br>
+                <input type="password" name="password">
+            </div>
+
+            <div class="field">
+                <label>עיר:</label> <br>
+                <select name="city">
+                    <option></option>
+                    <option>שלומי</option>
+                    <option>בני יעיש</option>
+                    <option>בת חפר</option>
+                    <option>מבוא חורון</option>
+                    <option>באר יעקב</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>כתובת:</label> <br>
+                <input type="text" name="address">
+            </div>
+
+            <div class="field">
+                <label>טלפון:</label> <br>
+                <input type="tel">
+            </div>
+
+            <div class="field">
+                <label>אימייל:</label> <br>
+                <input type="email" required>
+            </div>
+
+            <div class="field">
+                <label>כמות פיצות:</label> <br>
+                <input type="number" min="2" max="4" required>
+            </div>
+
+            <div class="field">
+                <label>תאריך לידה:</label> <br>
+                <input type="date">
+            </div>
+
+            <div class="field">
+                <label>שעת איסוף:</label> <br>
+                <input type="time">
+            </div>
+
+            <div class="field">
+                <label>צבע מגש:</label> <br>
+                <input type="color">
+            </div>
+
+            <div class="field">
+                <label><b>תוספות:</b></label> <br>
+                <label>
+                    <input type="checkbox"> זיתים
+                </label>
+                <label>
+                    <input type="checkbox"> עגבניות
+                </label>
+                <label>
+                    <input type="checkbox"> בצל
+                </label>
+                <label>
+                    <input type="checkbox"> בולגרית
+                </label>
+                <label>
+                    <input type="checkbox"> אקסטרה גבינה
+                </label>
+            </div>
+
+            <div class="field">
+                <label><b>גודל:</b></label> <br>
+                <label>
+                    <input type="radio" name="size"> אישי
+                </label>
+                <label>
+                    <input type="radio" name="size"> משפחתי
+                </label>
+            </div>
+
+            <div class="field">
+                <label><b>אמצעי תשלום:</b></label> <br>
+                <label>
+                    <input type="radio" name="paymant"> מזומן
+                </label>
+                <label>
+                    <input type="radio" name="paymant"> אשראי
+                </label>
+                <label>
+                    <input type="radio" name="paymant"> צ'ק
+                </label>
+                <label>
+                    <input type="radio" name="paymant"> העברה בנקאית
+                </label>
+            </div>
+
+            <div class="field">
+                <label>טווח חמוצים:</label> <br>
+                <input type="range">
+            </div>
+
+            <div class="field">
+                <label>צילום ת.ז.</label> <br>
+                <input type="file">
+            </div>
+
+            <div class="field">
+                <label>הערה:</label> <br>
+                <textarea></textarea>
+            </div>
+
+            <button>שלח טופס</button>
+        </form>
+    </div>
+</body>
+
+</html>

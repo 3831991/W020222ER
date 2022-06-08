@@ -1,0 +1,58 @@
+body {
+    direction: rtl;
+    background-image: url(pizza.jpg);
+    background-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.frame {
+    width: 80%;
+    min-height: 700px;
+    background-color: #ffffffbd;
+    margin: auto;
+    border-radius: 6px;
+    overflow: auto;
+    padding-bottom: 30px;
+}
+
+header {
+    height: 100px;
+    background-color: #585340;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    padding: 16px;
+}
+
+.field {
+    margin: 8px 16px;
+    font-size: 16px;
+}
+
+.field>input,
+.field select,
+button,
+.field textarea {
+    padding: 6px 8px;
+    width: 300px;
+    border-radius: 10px;
+    font-size: 20px;
+    box-sizing: content-box;
+}
+
+.field textarea {
+    height: 100px;
+}
+
+button {
+    background-color: aqua;
+    margin: 16px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: bold;
+}

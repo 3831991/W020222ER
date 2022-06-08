@@ -1,0 +1,11 @@
+body {
+    direction: rtl;
+}
+
+.frame {
+    max-width: 600px;
+}
+
+mark {
+    padding: 0;
+}

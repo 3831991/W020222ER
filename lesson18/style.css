@@ -1,0 +1,72 @@
+body {
+    direction: rtl;
+    background-color: #d0ffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+
+#frame {
+    width: 80%;
+    min-height: 500px;
+    background-color: #ffffffd7;
+    margin: auto;
+    padding-bottom: 200px;
+}
+
+header {
+    background-color: #48cccc;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding: 16px 8px;
+    font-size: 48px;
+}
+
+.card {
+    margin: 6px 0;
+    padding: 8px;
+    border-bottom: 1px solid;
+}
+
+p {
+    font-weight: bold;
+}
+
+#message {
+    font-size: 80px;
+    color: red;
+    text-align: center;
+}
+
+.trafficLights {
+    background: #292929;
+    display: inline-block;
+    padding: 4px;
+    border-radius: 3px;
+    border: 3px solid;
+}
+
+.trafficLights div {
+    background-color: grey;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin: 3px 1px;
+    border: 3px solid;
+}
+
+td button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+td button:hover {
+    transform: rotate(360deg) scale(1.2);
+    transition: 0.6s;
+}

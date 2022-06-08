@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+body {
+    direction: rtl;
+    margin: 0;
+    font-family: 'Suez One', serif;
+}
+
+h1 {
+    text-align: center;
+    background: aquamarine;
+    margin: 0;
+    padding: 18px;
+}
+
+#navbar {
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+.item {
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.item:hover {
+    background-color: blueviolet;
+    color: white;
+}

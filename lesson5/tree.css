@@ -1,0 +1,17 @@
+div {
+    min-height: 20px;
+    border: 1px solid;
+    margin-bottom: 1px;
+}
+
+body>div {
+    background-color: blue;
+}
+
+body>div>div {
+    background-color: black;
+}
+
+body>div>div>div {
+    background-color: red;
+}

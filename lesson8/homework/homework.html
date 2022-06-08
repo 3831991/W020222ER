@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script - Home work</title>
+    <link rel="stylesheet" href="homework.css">
+    <script src="homework.js"></script>
+</head>
+
+<body>
+    <div id="frame">
+        <header>
+            <h1>שיעורי בית - תרגיל 7</h1>
+        </header>
+
+        <div class="card">
+            <p>א. יש לקלוט 2 מספרים ולהציג ב-span את המספר הגדול.</p>
+            <p>*חיפפנו באופן הצגת הקלט</p>
+
+            <input type="number" id="num1" onchange="bigColor()">
+            <input type="number" id="num2" onchange="bigColor()">
+        </div>
+
+        <div class="card">
+            <p>ב. לשאול שאלה ואם המשתמש כותב את התשובה הנכונה לכתוב לו "נכון" ואם התשובה לא נכונה לכתוב לו "לא נכון".</p>
+
+            <label>כמה משולשים יש בפיצה?</label>
+            <input type="text" id="answer">
+            <button onclick="check()">אישור</button>
+        </div>
+
+        <div class="card">
+            <p>ד. לקלוט 2 מספרים להחסיר ביניהם ולהציג אותם עם התוצאה ב-span*</p>
+
+            <input type="number" id="num3">
+            <input type="number" id="num4">
+            <button onclick="less()">אישור</button>
+            <p id="output"></p>
+        </div>
+
+        <div class="card">
+            <p>ליצור כפתור שבלחיצה עליו זה מציג true ובלחיצה הבאה זה מציג false וחוזר חלילה.</p>
+
+            <button id="btn" onclick="btn()">true</button>
+        </div>
+
+        <div class="card">
+            <p>ו. לקלוט 2 מספרים ולהחליף ביניהם.</p>
+
+            <input type="number" id="num5">
+            <input type="number" id="num6">
+            <button onclick="replace()">אישור</button>
+        </div>
+
+        <div class="card">
+            <p>ז. לקלוט מספר ולכתוב האם הוא זוגי או אי זוגי.</p>
+
+            <input type="number" id="num7">
+            <button onclick="evenOrOdd()">אישור</button>
+        </div>
+
+        <div class="card">
+            <p>ח. לשאול שאלה ולאפשר לבחור את התשובה מ-select.</p>
+
+            <label>כמה שיעורים למדנו?</label>
+            <select id="sel" onchange="answer()">
+                <option>2</option>
+                <option>5</option>
+                <option>8</option>
+                <option>10</option>
+                <option>50</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <p>ט. ליצור כפתור שבלחיצה עליו זה מוסיף מספר עם פסיק למספר הקודם. </p>
+
+            <button onclick="append()">WOW</button>
+            <p id="output2"></p>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+body {
+    direction: rtl;
+}
+
+table {
+    /* width: 100%; */
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    /* עובי */
+    border-width: 1px;
+    /* סגנון */
+    border-style: solid;
+    /* צבע */
+    border-color: black;
+    /* border: 1px solid black; */
+    padding: 8px;
+    width: 50px;
+}
+
+tr:hover {
+    background-color: greenyellow;
+}

@@ -1,0 +1,12 @@
+body {
+    direction: rtl;
+}
+
+#gallery {
+    width: 500px;
+}
+
+#gallery img {
+    width: 100%;
+    display: none;
+}

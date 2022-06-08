@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script - Home work</title>
+    <link rel="stylesheet" href="homework.css">
+    <script src="homework.js"></script>
+</head>
+
+<body>
+    <div id="frame">
+        <header>
+            <h1>שיעורי בית - תרגיל 8</h1>
+        </header>
+
+        <div class="card">
+            <p>א. יש לקלוט מספר ולהמיר אותו לדולר.</p>
+            <input type="number" id="ils">
+            <button onclick="convert()">המר</button>
+            <span id="output"></span>
+        </div>
+
+        <div class="card">
+            <p>ב. יש לקלוט שם של צבע ב-Select ולהגדיר אותו לרקע של האתר.</p>
+
+            <select id="color" onchange="setColor()">
+                <option></option>
+                <option value="red">אדום</option>
+                <option value="green">ירוק</option>
+                <option value="blue">כחול</option>
+                <option>aqua</option>
+                <option>salmon</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <p>ג. יש לקלוט אורך ורוחב של מלבן ולכתוב את ההיקף שלו.</p>
+            <input type="number" id="num1" placeholder="אורך">
+            <input type="number" id="num2" placeholder="רוחב">
+            <button onclick="calc()">חשב</button>
+            <span id="output2"></span>
+        </div>
+    </div>
+</body>
+
+</html>

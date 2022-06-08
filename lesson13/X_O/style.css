@@ -1,0 +1,27 @@
+body {
+    direction: rtl;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    font-size: 50px;
+    padding: 16px;
+    border: 2px solid;
+    height: 90px;
+    width: 90px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+td:hover {
+    border-width: 5px;
+}
+
+#output {
+    text-align: center;
+    font-size: 25px;
+}

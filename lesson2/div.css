@@ -1,0 +1,30 @@
+body {
+    direction: rtl;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+/* עיצוב של ID */
+
+#david {
+    background-color: aqua;
+}
+
+
+/* עיצוב של Class */
+
+.myClass {
+    background-color: darkmagenta;
+    width: 250px;
+}
+
+div {
+    background-color: blueviolet;
+    height: 100px;
+    width: 150px;
+    margin-bottom: 10px;
+    float: right;
+}

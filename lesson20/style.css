@@ -1,0 +1,28 @@
+body {
+    direction: rtl;
+}
+
+table {
+    table-layout: fixed;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    height: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin: 8px;
+}
+
+.current {
+    background-color: aquamarine !important;
+}

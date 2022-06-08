@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="add()">
+    <div id="frame">
+        <header>
+            <h1>Java Script - Object & DOM</h1>
+        </header>
+
+        <div class="card">
+            <p>א. רשימת משימות</p>
+
+            <button onclick="add()">+ הוסף</button>
+            <table id="tasks"></table>
+        </div>
+
+        <div class="card">
+            <p>סעיף ב' בשיעורי בית</p>
+
+            <input type="text" onkeyup="addToArray(this, event)">
+            <ol id="list"></ol>
+        </div>
+    </div>
+</body>
+
+</html>

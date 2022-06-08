@@ -1,0 +1,43 @@
+body {
+    direction: rtl;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    background-color: #4CAF50;
+}
+
+nav a,
+.dropdown {
+    padding: 10px 16px;
+    font-size: 24px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+nav a:hover,
+.dropdown:hover {
+    background-color: #cddc39;
+    color: black;
+}
+
+.dropdown .content {
+    display: none;
+    position: absolute;
+    width: 150px;
+    height: 300%;
+    background-color: aqua;
+    right: 0;
+    top: 100%;
+}
+
+.dropdown:hover .content {
+    display: initial;
+}
+
+.content a {
+    display: block;
+    color: black;
+}

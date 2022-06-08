@@ -1,0 +1,50 @@
+body {
+    direction: rtl;
+}
+
+div {
+    margin: 10px;
+    padding: 20px;
+}
+
+#div1 {
+    background-color: yellow;
+}
+
+#div2 {
+    background-color: green;
+}
+
+#div3 {
+    background-color: blue;
+}
+
+#div4 {
+    background-color: yellow;
+}
+
+#div4 div {
+    background-color: blue;
+}
+
+#div5 {
+    background-color: green;
+}
+
+#div5 div {
+    background-color: orange;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    height: 30px;
+    border: 1px solid black;
+}
+
+#merge {
+    background-color: gray;
+}

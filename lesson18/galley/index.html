@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="createGallery()">
+    <aside id="aside"></aside>
+    <div class="frame">
+        <div id="gallery"></div>
+
+        <button class="btn right" onclick="showImage('next')">
+            <i class="fa fa-arrow-circle-right"></i>
+        </button>
+
+        <button class="btn center" onclick="pause()">
+            <i id="pause" class="fa fa-pause-circle"></i>
+        </button>
+
+        <button class="btn left" onclick="showImage('prev')">
+            <i class="fa fa-arrow-circle-left"></i>
+        </button>
+    </div>
+</body>
+
+</html>

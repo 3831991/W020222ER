@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="red(); brokenTrafficLights(); clock()">
+    <div id="frame">
+        <header>
+            <h1>Java Script - Timeout</h1>
+        </header>
+
+        <div class="card">
+            <p>צרו לחצן שמפעיל פעולה מתוזמנת</p>
+
+            <label>מס' שניות</label>
+            <input type="number" id="num1" value="3">
+            <button id="btn1" onclick="timing()">אישור</button>
+
+            <p id="output"></p>
+        </div>
+
+        <div class="card">
+            <p>קלטו מספר מהמשתמש והצג טיימר לאחור</p>
+
+            <label>מס' שניות</label>
+            <input type="number" id="num2" value="10">
+            <button id="btn2" onclick="timer()">אישור</button>
+
+            <p id="output2"></p>
+        </div>
+
+        <div class="card">
+            <p>צרו רמזורים</p>
+
+            <div class="trafficLights">
+                <div id="red"></div>
+                <div id="orange"></div>
+                <div id="green"></div>
+            </div>
+
+            <div class="trafficLights">
+                <div id="red2"></div>
+                <div id="orange2"></div>
+                <div id="green2"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <p>צרו שעון דיגיטלי חי</p>
+
+            <p id="clock"></p>
+        </div>
+    </div>
+</body>
+
+</html>

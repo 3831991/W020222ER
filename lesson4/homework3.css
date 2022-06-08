@@ -1,0 +1,23 @@
+body {
+    direction: rtl;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    height: 30px;
+    border: 1px solid black;
+}
+
+td:first-child,
+td:last-child {
+    background-color: gray;
+}
+
+td:nth-child(4) {
+    background-color: yellow;
+}

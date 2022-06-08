@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="frame">
+        <header>
+            <h1>Java Script</h1>
+        </header>
+
+        <div class="card">
+            <label>בחר צבע לאתר:</label>
+            <input type="color" id="color" onchange="setColor()">
+        </div>
+
+        <div class="card">
+            <label>הקלד את הכתובת שלך:</label>
+            <input type="text" id="txt" onkeyup="setSize()">
+        </div>
+
+        <div class="card">
+            <label>בחר כותרת לאתר:</label>
+            <input type="text" id="t">
+            <button onclick="setTitle()">אישור</button>
+        </div>
+    </div>
+</body>
+
+</html>
