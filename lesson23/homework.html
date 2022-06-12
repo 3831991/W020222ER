@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script - Home work</title>
+    <link rel="stylesheet" href="homework.css">
+    <script src="homework.js" defer></script>
+</head>
+
+<body>
+    <div id="frame">
+        <header>
+            <h1>תרגול מסכם - JavaScript</h1>
+        </header>
+
+        <div class="card arr1">
+            <h3>מערך מספרים</h3>
+
+            <div class="array">
+                <input type="number" onchange="arrChange()">
+                <input type="number" onchange="arrChange()">
+                <input type="number" onchange="arrChange()">
+                <input type="number" onchange="arrChange()">
+                <input type="number" onchange="arrChange()">
+            </div>
+        </div>
+
+        <div class="card arr2">
+            <h3>מערך טקסטים</h3>
+
+            <div class="array">
+                <input type="text" onchange="arrChange()">
+                <input type="text" onchange="arrChange()">
+                <input type="text" onchange="arrChange()">
+                <input type="text" onchange="arrChange()">
+                <input type="text" onchange="arrChange()">
+            </div>
+        </div>
+
+        <div class="card">
+            <p>1. יש ליצור פונקציה המקבלת מערך של מספרים ומחזירה את הסיכום.</p>
+            <button onclick="this.innerHTML = sum(numbers)">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>2. יש ליצור פונקציה המקבלת מערך של מספרים ומחזירה את הממוצע.</p>
+            <button onclick="this.innerHTML = avg(numbers)">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>3. יש ליצור פונקציה המקבלת 2 מערכים (או יותר) ומחזירה אותם כמערך אחד.</p>
+            <button onclick="this.innerHTML = margeArray(numbers, strings)">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>4. יש ליצור פונקציה המקבלת מערך של מחזורות טקסט ומחזירה את המחרוזות הארוכה.</p>
+            <button onclick="this.innerHTML = longStr(strings)">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>5. יש ליצור פונקציה המקבלת מערך ומחזירה האם כל הערכים במערך שווים. (true/false)</p>
+            <button onclick="this.innerHTML = isArrEqual(strings)">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>6. יש ליצור פונקציה המקבלת 2 מספרים ומחזירה מערך עם כל המספרים שבניהם.</p>
+            <button onclick="this.innerHTML = getBetween(numbers[0], numbers[1])">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>7. יש ליצור פונקציה המקבלת מערך ומחזירה איבר רנדומלי.</p>
+            <button onclick="this.innerHTML = getRandom(numbers)">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>8. יש ליצור פונקציה המקבלת מערך ומחזירה את האיבר הראשון והאחרון של המערך.</p>
+            <button onclick="this.innerHTML = getFirstAndLast(strings)">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>9. יש לקלוט מערך של מחרוזות טקסט באנגלית ולהפוך את האותיות הראשונות של כל המילים לאותיות גדולות - toUpperCase()</p>
+            <button onclick="this.innerHTML = upper(strings)">הצג</button>
+        </div>
+
+        <div class="card">
+            <p>10. יש לקלוט מערך של מחרוזות טקסט ולהחזיר רק את המחרוזות הארוכות מ-6 תווים.</p>
+            <button onclick="this.innerHTML = getMaZeMeshane(strings)">הצג</button>
+        </div>
+    </div>
+</body>
+
+</html>
