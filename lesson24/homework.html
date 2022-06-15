@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script - Home work</title>
+    <link rel="stylesheet" href="homework.css">
+    <script src="homework.js" defer></script>
+</head>
+
+<body onload="replaceColor()">
+    <div id="frame">
+        <header>
+            <h1>תרגול מסכם - המשך - JavaScript</h1>
+        </header>
+
+        <div class="card">
+            <p>יש ליצור ב-JS טבלה שמתמלאת באותיות באופן רנדומלי.</p>
+            <button onclick="createTable()">הצג</button>
+            <table id="lettersTable"></table>
+        </div>
+
+        <div class="card">
+            <p>יש ליצור תמונה שכל פעם שהעכבר עובר עליה היא גדלה יותר.</p>
+
+            <img id="img" src="img (7).jpg" alt="צמחייה" width="200" onmouseover="biggerImageSize()">
+        </div>
+
+        <div class="card" style="padding-bottom: 120px;">
+            <p>יש ליצור אלמנט שזז לכל מקום לפי העכבר.</p>
+            <div id="circle" onmousemove="move(event)"></div>
+        </div>
+
+        <div class="card">
+            <p>יש ליצור אלמנט המחליף צבע כל שנייה.</p>
+            <div id="circle2"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
