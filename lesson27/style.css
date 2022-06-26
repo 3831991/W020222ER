@@ -1,0 +1,24 @@
+body {
+    direction: rtl;
+}
+
+h1 {
+    margin: 8px;
+    text-align: center;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2 !important;
+}
+
+.remove {
+    padding: 0px 9px 3px 9px;
+    border-radius: 50%;
+}
+
+.remove:hover {
+    transform: scale(1.2);
+    transition: 0.3s;
+}
