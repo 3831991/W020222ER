@@ -1,0 +1,117 @@
+body {
+    direction: rtl;
+    background-color: #d0ffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#frame {
+    width: 80%;
+    min-height: 500px;
+    background-color: #ffffffd7;
+    margin: auto;
+    padding-bottom: 200px;
+}
+
+header {
+    background-color: #48cccc;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding: 16px 8px;
+    font-size: 48px;
+}
+
+.card {
+    margin: 6px 0;
+    padding: 8px;
+    border-bottom: 1px solid;
+}
+
+p {
+    font-weight: bold;
+}
+
+#output,
+#output2,
+#output3 {
+    direction: ltr;
+    text-align: right;
+}
+
+#list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#multiBoard table {
+    direction: ltr;
+    border-collapse: collapse;
+}
+
+#multiBoard td {
+    border: 1px solid;
+    padding: 6px;
+    text-align: center;
+}
+
+.array {
+    padding: 6px;
+    background-color: aqua;
+    display: flex;
+}
+
+.array input {
+    width: 100%;
+    margin: 0 3px;
+    font-size: 18px;
+    padding: 3px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+button {
+    font-size: 22px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#circle {
+    height: 100px;
+    width: 100px;
+    background-color: cadetblue;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#circle2 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: hsl(25, 75%, 47%);
+    transition: 0.3s;
+}
+
+img {
+    height: 42px;
+}
+
+td img {
+    height: 22px;
+}
+
+td input {
+    width: 100%;
+    display: inline-block;
+}
