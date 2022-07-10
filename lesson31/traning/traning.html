@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script - Home work</title>
+    <link rel="stylesheet" href="traning.css">
+    <script src="traning.js" defer></script>
+</head>
+
+<body>
+    <div id="frame">
+        <header>
+            <h1>תרגול חזרה</h1>
+        </header>
+
+        <div class="card" id="t1">
+            <p>יש לקלוט מספר ולהציג ב-div את כל המספרים שמתחתיו....</p>
+            <input type="number" value="55">
+            <button onclick="showBelowNumber()">הצג</button>
+            <p class="output"></p>
+        </div>
+
+        <div class="card" id="t2">
+            <p>יש לקלוט מספר בדולרים ולהמיר אותו לשקלים.</p>
+            <input type="number">
+            <button onclick="convertToDollar()">המר</button>
+            <p class="output"></p>
+        </div>
+
+        <div class="card" id="t3">
+            <p>יש לקלוט 2 תאריכים ולהציג את התאריך הגדול שבניהם.</p>
+
+            <input type="date" id="date1">
+            <input type="date" id="date2">
+
+            <button onclick="showBiggerDate()">הצג</button>
+            <p class="output"></p>
+        </div>
+
+        <div class="card" id="t4">
+            <p>יש לקלוט 2 תאריכים ולהציג את כל התאריכים שבניהם (כולל אותם).</p>
+
+            <input type="date" id="date1">
+            <input type="date" id="date2">
+
+            <button onclick="showBetweenDate()">הצג</button>
+            <p class="output"></p>
+        </div>
+    </div>
+</body>
+
+</html>
