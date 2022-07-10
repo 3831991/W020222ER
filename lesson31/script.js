@@ -1,4 +1,4 @@
-const shoppingCart = [];
+let shoppingCart = [];
 
 function showProducts() {
     let html = "";
@@ -15,10 +15,19 @@ function showProducts() {
     }
 
     document.querySelector("#products").innerHTML = html;
+
+    // אם יש ערכים ב-localStorage
+    if (localStorage.cart) {
+        shoppingCart = JSON.parse(localStorage.cart);
+        updateCartCount();
+    }
 }
 
 function addProduct(id) {
     shoppingCart.push(id);
+
+    // שמרנו את המערך ב-localStorage
+    localStorage.cart = JSON.stringify(shoppingCart);
     updateCartCount();
 }
 
@@ -46,3 +55,13 @@ function showCart() {
 }
 
 showProducts();
+
+function setColor() {
+    const color = document.querySelector("#color").value;
+    document.body.style.backgroundColor = color;
+    localStorage.color = color;
+}
+
+if (localStorage.color) {
+    document.body.style.backgroundColor = localStorage.color;
+}
