@@ -1,0 +1,55 @@
+const fruits = [{
+        id: 1,
+        name: 'אגס',
+        price: 18,
+        img: 'pear.png',
+    },
+    {
+        id: 2,
+        name: 'תפוז',
+        price: 9,
+        img: 'orange.png',
+    },
+    {
+        id: 3,
+        name: 'דובדבן',
+        price: 15,
+        img: 'cherry.png',
+    },
+    {
+        id: 4,
+        name: 'תפוח',
+        price: 11,
+        img: 'apple.png',
+    },
+    {
+        id: 5,
+        name: 'לימון',
+        price: 12,
+        img: 'lemon.png',
+    },
+    {
+        id: 6,
+        name: 'אננס',
+        price: 35,
+        img: 'pineapple.png',
+    },
+    {
+        id: 7,
+        name: 'בננה',
+        price: 6,
+        img: 'banana.png',
+    },
+    {
+        id: 8,
+        name: 'ענבים',
+        price: 17,
+        img: 'grapes.png',
+    },
+    {
+        id: 9,
+        name: 'אבטיח',
+        price: 2.5,
+        img: 'watermelon.png',
+    },
+];
