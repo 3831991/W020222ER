@@ -1,0 +1,21 @@
+body {
+    direction: rtl;
+    background-color: blanchedalmond;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: rgb(254, 210, 98);
+    padding: 16px;
+    min-height: 500px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+input {
+    margin-bottom: 16px;
+}
