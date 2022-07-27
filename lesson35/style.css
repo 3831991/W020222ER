@@ -1,0 +1,26 @@
+body {
+    direction: rtl;
+    background-color: #e7e7e7;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #b6d796;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px 0 #00000096;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+input {
+    margin-bottom: 16px;
+}
+
+.error {
+    background-color: #d79696;
+}
