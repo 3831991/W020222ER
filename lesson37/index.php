@@ -14,13 +14,12 @@
             <h1>Ajax</h1>
         </header>
 
-
         <button onclick="getData()">קבל נתונים</button>
         <input type="number" id="limit" placeholder="כמות תוצאות">
 
         <div class="loader"></div>
 
-        <ol id="output"></ol>
+        <div id="output"></div>
     </div>
 </body>
 

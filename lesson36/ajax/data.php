@@ -807,6 +807,8 @@
     // isset() = בודק האם קיים המשתנה ומחזיר True/False
     // $_GET = מערך מובנה שמביא לנו את הפרמטרים משורת ה-URL (שנשלחו ב-get)
 
+    sleep(2);
+
     if (isset($_GET['id'])) {
         foreach ($arr as $item) {
             if ($item['id'] == $_GET['id']) {
