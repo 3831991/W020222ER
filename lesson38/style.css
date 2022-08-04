@@ -1,0 +1,158 @@
+body {
+    direction: rtl;
+    background-color: #d0ffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#frame {
+    width: 80%;
+    height: 500px;
+    background-color: #ffffffd7;
+    margin: auto;
+    padding-bottom: 200px;
+    overflow: auto;
+}
+
+header {
+    background-color: #48cccc;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding: 16px 8px;
+    font-size: 48px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    transition: 0.3s;
+    width: 40%;
+    float: right;
+    margin: 30px 16px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+p {
+    font-weight: bold;
+}
+
+#output,
+#output2,
+#output3 {
+    direction: ltr;
+    text-align: right;
+}
+
+#list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#multiBoard table {
+    direction: ltr;
+    border-collapse: collapse;
+}
+
+#multiBoard td {
+    border: 1px solid;
+    padding: 6px;
+    text-align: center;
+}
+
+.array {
+    padding: 6px;
+    background-color: aqua;
+    display: flex;
+}
+
+.array input {
+    width: 100%;
+    margin: 0 3px;
+    font-size: 18px;
+    padding: 3px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+button {
+    font-size: 22px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#circle {
+    height: 100px;
+    width: 100px;
+    background-color: cadetblue;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#circle2 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: hsl(25, 75%, 47%);
+    transition: 0.3s;
+}
+
+td img {
+    height: 22px;
+}
+
+td input {
+    width: 100%;
+    display: inline-block;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #7cdb34;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+    margin: 60px auto;
+    display: none;
+}
+
+
+/* Safari */
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
