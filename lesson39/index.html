@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th></th>
+        </tr>
+        <template>
+            <tr>
+                <td id="num"></td>
+                <td id="firstName"></td>
+                <td id="lastName"></td>
+                <td><button class="remove" onclick="remove(this)">x</button></td>
+            </tr>
+        </template>
+    </table>
+
+    <button onclick="addUser()">הוספת משתמש</button>
+
+    <img src="images/img (1).jpg">
+    <img src="images/img (2).jpg">
+    <img src="images/img (3).jpg">
+
+    <!-- <audio id="zlil" src="wow.wav"></audio> -->
+</body>
+
+</html>

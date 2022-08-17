@@ -1,0 +1,54 @@
+body {
+    direction: rtl;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    border-bottom: 1px solid grey;
+}
+
+td,
+th {
+    height: 40px;
+}
+
+.remove {
+    background-color: white;
+    color: red;
+    border: none;
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.remove:hover {
+    background-color: red;
+    color: white;
+    transform: rotate(360deg) scale(1.1);
+    transition: 0.6s;
+}
+
+.remove:active {
+    background-color: aqua;
+    transform: scale(1.8);
+    transition: 0.6s;
+}
+
+img {
+    width: 300px;
+    display: block;
+    transition: 0.6s;
+}
+
+img.kuku {
+    width: 600px;
+    transition: 0.6s;
+    transform: skew(10deg, 10deg);
+}
