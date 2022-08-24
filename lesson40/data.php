@@ -11,7 +11,7 @@
     $url = "";
 
     switch ($_GET['category']) {
-        case "news" : $url = "https://rss.walla.co.il/feed/1"; break; // חדשות
+        case "news" : $url = "https://rss.walla.co.il/feed/1?type=main"; break; // חדשות
         case "estate" : $url = "https://rss.walla.co.il/feed/199?type=main"; break; // נדל"ן
         case "cars" : $url = "https://rss.walla.co.il/feed/4705"; break; // מכוניות
         case "health" : $url = "https://rss.walla.co.il/feed/578"; break; // בריאות
@@ -28,7 +28,7 @@
 
         die();
     }
-    
+
     $xml_string = file_get_contents($url);
 
     $xml = simplexml_load_string($xml_string, 'SimpleXMLElement', LIBXML_NOCDATA);

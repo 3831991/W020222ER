@@ -11,3 +11,24 @@ body {
 .w3-third {
     float: right;
 }
+
+.img {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+
+.desc {
+    height: 150px;
+    overflow: hidden;
+}
+
+.desc:hover {
+    overflow-y: scroll;
+}
+
+.active {
+    color: #fff !important;
+    background-color: #009688 !important;
+}
