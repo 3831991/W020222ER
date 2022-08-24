@@ -1,0 +1,13 @@
+body {
+    font-family: "Raleway", sans-serif;
+    direction: rtl;
+}
+
+.w3-bar-block .w3-bar-item {
+    text-align: right;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.w3-third {
+    float: right;
+}
