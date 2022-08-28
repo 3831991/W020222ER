@@ -1,0 +1,29 @@
+body {
+    direction: rtl;
+}
+
+.imgFrame {
+    background-color: #9c9c9c;
+    height: 160px;
+    width: 160px;
+    float: right;
+    margin: 6px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0 #afafaf;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.6s;
+}
+
+.imgFrame:hover {
+    filter: brightness(1.1);
+}
+
+.showed {
+    transform: matrix3d(1, 0, 4, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1);
+}
+
+.imgFrame:not(.showed) {
+    background-image: none !important;
+}
