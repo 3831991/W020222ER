@@ -6,17 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
     <title>Document</title>
 </head>
 
 <body>
+    <div class="players">
+        <div id="p1">
+            <h3>שחקן 1</h3>
+            <p></p>
+        </div>
+        <div id="p2">
+            <h3>שחקן 2</h3>
+            <p></p>
+        </div>
+    </div>
+
     <div class="board">
         <template>
             <div class="imgFrame"></div>
         </template>
     </div>
+
+    <div id="snackbar"></div>
 </body>
 
 </html>
