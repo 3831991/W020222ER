@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>לקוחות</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body oncontextmenu="event.preventDefault()" onmousedown="event.preventDefault()">
+    <div id="frame">
+        <header>
+            <h1>לקוחות</h1>
+        </header>
+
+        <template>
+            <div class="accordion">
+                <header></header>
+                <button>X</button>
+    
+                <div class="content">
+                    <h3>פרטי הלקוח</h3>
+    
+                    <p id="fullName"><b>שם הלקוח: </b></p>
+                    <p id="personId"><b>ת.ז. </b></p>
+                    <p id="email"><b>אימייל: </b></p>
+                    <p id="phone"><b>טלפון: </b></p>
+                </div>
+            </div>
+        </template>
+    </div>
+</body>
+
+</html>

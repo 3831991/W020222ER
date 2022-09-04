@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Secular+One&display=swap');
+body {
+    direction: rtl;
+    background-color: #76608a;
+    font-family: 'Secular One', sans-serif;
+}
+
+#frame {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    min-height: 500px;
+    background-color: #ffffff91
+}
+
+#frame>header {
+    background-color: #00aba9;
+    padding: 20px;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: 70px;
+    text-align: center;
+}
+
+.accordion {
+    background-color: #efefef;
+    margin: 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 6px 0 #00000057;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.accordion button {
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border: 0;
+    padding: 14px;
+    color: crimson;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.accordion button:hover {
+    background-color: crimson;
+    color: white;
+    transition: 0.3s;
+}
+
+.accordion header {
+    padding: 14px;
+}
+
+.accordion header:hover {
+    background-color: #e0e0e0;
+}
+
+.accordion .content {
+    display: none;
+    padding: 0 30px 16px 30px;
+    border-top: 1px solid #c6c6c6;
+}
