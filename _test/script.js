@@ -16,6 +16,14 @@ $(() => {
     });
 });
 
+function sizePlus() {
+    $('#frame *').css("font-size", "+=2");
+}
+
+function sizeMinus() {
+    $('#frame *').css("font-size", "-=2");
+}
+
 const gimatria = [
     { num: 400, char: "ת" },
     { num: 300, char: "ש" },
