@@ -49,6 +49,16 @@ const gimatria = [
     { num: 1, char: "א" },
 ];
 
+const chars = ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ", "ק", "ר", "ש", "ת"];
+const manzapach = {
+    'ך': 'כ',
+    'ם': 'מ',
+    'ן': 'נ',
+    'ף': 'פ',
+    'ץ': 'צ',
+};
+const gimatria_dictionary = gimatria.reduce((obj, item) => { return {...obj, [item.char]: item.num } }, {});
+
 function getGimatria(number, includeGeresh = true) {
     let str = '';
 
@@ -74,4 +84,20 @@ function getGimatria(number, includeGeresh = true) {
     }
 
     return str;
+}
+
+function manzapachTransform(char) {
+    if (manzapach[char]) {
+        return manzapach[char];
+    }
+
+    return char;
+}
+
+function gimatriaDecode(str) {
+    return str.split('').reduce((sum, char) => sum += (manzapachTransform(gimatria_dictionary[char]) || 0), 0);
+}
+
+function nameToIndexes(name) {
+    return name.split('').map(c => chars.indexOf(manzapachTransform(c))).filter(x => x != -1);
 }
