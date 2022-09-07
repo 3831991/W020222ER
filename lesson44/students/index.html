@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>סטודנטים</h1>
+
+    <div>
+        <select>
+            <option value="" disabled selected>בחר כיתה</option>
+        </select>
+
+        <table>
+            <tr>
+                <th>#</th>
+                <th>שם התלמיד</th>
+                <th>ת.ז.</th>
+                <th>טלפון</th>
+                <th>אימייל</th>
+                <th>ציונים</th>
+                <!-- עמודה לכפתור המחיקה -->
+                <th></th>
+            </tr>
+            <template>
+                <tr>
+                    <td id="numbering"></td>
+                    <td id="fullName"></td>
+                    <td id="personId"></td>
+                    <td id="phone"></td>
+                    <td id="email"></td>
+                    <td id="grades"></td>
+                    <td></td>
+                </tr>
+            </template>
+
+            <tbody id="students"></tbody>
+        </table>
+    </div>
+</body>
+
+</html>

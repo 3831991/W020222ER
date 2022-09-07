@@ -1,0 +1,55 @@
+/* ייבאנו גופן מאתר חיצוני */
+
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+/* עיצוב ה-Body */
+
+body {
+    /* כיוון האתר */
+    direction: rtl;
+    /* רקע */
+    background-color: blue;
+    /* גופן */
+    font-family: 'Secular One', sans-serif;
+}
+
+h1 {
+    /* יישור טקסט */
+    text-align: center;
+    /* צבע הטקסט */
+    color: white;
+    /* גודל הטקסט */
+    font-size: 50px;
+}
+
+div {
+    /* מינימום גובה */
+    min-height: 500px;
+    /* רקע */
+    background-color: #ffffffe3;
+    /* מקסימום רוחב */
+    max-width: 900px;
+    /* רוחב */
+    width: 90%;
+    /* ריווח מהצדדים (הפעם השתמשנו לצורך מרכוז) */
+    margin: auto;
+    /* עיגול קצוות */
+    border-radius: 5px;
+}
+
+section {
+    border-bottom: 1px solid #c9c9c9;
+    padding: 16px;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+select {
+    font-size: 20px;
+    padding: 6px;
+    border-radius: 6px;
+    margin: 10px;
+}
