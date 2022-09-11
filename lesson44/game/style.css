@@ -43,3 +43,38 @@ td div {
     background-color: #833fb5;
     cursor: pointer;
 }
+
+td div:hover {
+    box-shadow: 0 0 5px 3px #7e7e7e;
+}
+
+table:hover .free {
+    border: 7px solid #833fb5;
+    background-color: #a265cf;
+}
+
+.gameOver {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    transition: 0.6s;
+}
+
+.gameOver p {
+    background-color: #ffffffc7;
+    font-size: 60px;
+    color: #4caf50;
+    padding: 16px;
+    transform: rotate(-33deg);
+    text-align: center;
+    margin: auto;
+    top: 0;
+    right: -150px;
+    bottom: 0;
+    left: -150px;
+    position: absolute;
+    height: 90px;
+}
