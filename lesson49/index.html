@@ -15,7 +15,7 @@
 <body>
     <h1>ניהול מוצרים</h1>
 
-    <div>
+    <div id="frame">
         <table class="w3-table w3-striped">
             <tr>
                 <th>#</th>
@@ -27,6 +27,31 @@
 
             <tbody id="products"></tbody>
         </table>
+
+
+        <button onclick="$('#modal').show()" class="w3-button w3-teal">מוצר חדש</button>
+
+        <div id="modal" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom w3-card-4">
+                <header class="w3-container w3-teal">
+                    <span onclick="$('#modal').hide()" class="w3-button w3-display-topright">&times;</span>
+                    <h2>הוספת מוצר</h2>
+                </header>
+                <div class="w3-container">
+                    <p>
+                        <label>שם המוצר:</label>
+                        <input id="productName" class="w3-input w3-border w3-round-large" type="text">
+                    </p>
+                    <p>
+                        <label>מחיר:</label>
+                        <input id="price" class="w3-input w3-border w3-round-large" type="number">
+                    </p>
+                </div>
+                <footer>
+                    <button class="w3-btn w3-green" onclick="addProduct()">הוסף</button>
+                </footer>
+            </div>
+        </div>
     </div>
 </body>
 

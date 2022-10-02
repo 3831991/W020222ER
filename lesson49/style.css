@@ -11,7 +11,7 @@ h1 {
     font-size: 50px;
 }
 
-div {
+div#frame {
     min-height: 500px;
     background-color: #ffffffe3;
     max-width: 900px;
@@ -45,6 +45,23 @@ select {
 }
 
 .w3-btn {
+    border-radius: 5px;
+}
+
+.w3-btn.remove {
     border-radius: 50%;
     padding: 2px 8px;
+}
+
+.w3-modal>div {
+    width: 500px;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    padding: 8px;
+    text-align: left;
 }
