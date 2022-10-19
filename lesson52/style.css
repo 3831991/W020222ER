@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 body {
     direction: rtl;
-    background-color: lightgreen;
+    background-color: blue;
     font-family: 'Secular One', sans-serif;
 }
 
@@ -37,40 +37,40 @@ select {
     margin: 10px;
 }
 
-.w3-table td,
-.w3-table th,
-.w3-table-all td,
-.w3-table-all th {
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 6px;
     text-align: center;
 }
 
-.w3-btn {
-    border-radius: 5px;
+th {
+    background-color: blue;
+    color: white;
 }
 
-.w3-btn.remove {
-    border-radius: 50%;
-    padding: 2px 8px;
-}
-
-.w3-modal>div {
-    width: 500px;
+tr:nth-child(even) {
+    background-color: #ccc;
 }
 
 header {
     text-align: center;
 }
 
-div#frame {
-    min-height: 500px;
-    background-color: #ffffffe3;
-    max-width: 900px;
-    width: 90%;
-    margin: auto;
-    border-radius: 5px;
+.modalBody {
+    min-height: 300px;
+    padding: 16px;
 }
 
-footer {
-    padding: 8px;
-    text-align: left;
+.modalBody th {
+    background: #607d8b;
+}
+
+.comment {
+    padding: 12px;
+    margin-top: 36px;
 }

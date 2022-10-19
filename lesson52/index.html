@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Group By</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Group By</h1>
+
+    <div id="frame">
+        <section>
+            <table id="art">
+                <tr>
+                    <th>#</th>
+                    <th>תאריך</th>
+                    <th>כתב</th>
+                    <th>כותרת</th>
+                    <th>תיאור</th>
+                    <th></th>
+                </tr>
+
+                <template>
+                    <tr>
+                        <td id="num"></td>
+                        <td id="date"></td>
+                        <td id="rep"></td>
+                        <td id="title"></td>
+                        <td id="desc"></td>
+                        <td id="comments"></td>
+                    </tr>
+                </template>
+            </table>
+
+        </section>
+    </div>
+
+    <div id="modal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="$('#modal').hide()" class="w3-button w3-display-topright">&times;</span>
+                <h2>תגובות לכתבה</h2>
+            </header>
+            <div class="w3-container modalBody">
+                <table id="com">
+                    <tr>
+                        <th>#</th>
+                        <th>תאריך</th>
+                        <th>שם</th>
+                        <th>תוכן</th>
+                    </tr>
+
+                    <template>
+                        <tr>
+                            <td id="num"></td>
+                            <td id="date"></td>
+                            <td id="name"></td>
+                            <td id="content"></td>
+                        </tr>
+                    </template>
+
+                    <tbody id="myTbody"></tbody>
+                </table>
+
+                <div class="comment w3-card-4 w3-round">
+                    <input type="text" class="w3-input w3-border w3-round" id="inputName" placeholder="שם">
+                    <textarea id="comment" class="w3-input w3-border w3-round" placeholder="תוכן"></textarea>
+                    <br>
+                    <button class="w3-btn w3-green w3-round" onclick="addComment()">שלח</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
