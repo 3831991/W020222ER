@@ -1,5 +1,8 @@
 <ul>
-    <li *ngFor="let item of list; let i = index" (click)="removeItem(i)">{{ item }}</li>
+    <li *ngFor="let item of list; let i = index" (click)="removeItem(i)" [class.kukuriku]="item == 'מלפפון'" [style.background-color]="'hsl(' + i * 40 + ', 100%, 25%)'">
+        {{ item }}
+        <span *ngIf="item == 'גמבה'"> - זה מגניב</span>
+    </li>
 </ul>
 
 <input [(ngModel)]="product" type="text" placeholder="מוצר חדש" (keyup.enter)="addProduct()">
