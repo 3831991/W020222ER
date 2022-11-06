@@ -1,0 +1,46 @@
+.frame {
+    width: 700px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px teal;
+    padding: 16px 24px;
+    margin: 24px auto;
+}
+
+h2 {
+    text-align: center;
+    color: teal;
+}
+
+.field {
+    padding-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 2px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background: teal;
+    color: white;
+    padding: 8px 12px;
+    border: beige;
+    border-radius: 6px;
+    font-size: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00a9a9;
+}

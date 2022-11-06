@@ -1,3 +1,37 @@
-<h1>
-    וואלה זה עובד!!
-</h1>
+<div class="frame">
+    <h2>טופס יצירת קשר</h2>
+
+    <div class="field">
+        <label>שם מלא</label>
+        <input type="text" [(ngModel)]="fullName">
+    </div>
+
+    <div class="field">
+        <label>טלפון</label>
+        <input type="text" [(ngModel)]="phone">
+    </div>
+
+    <div class="field">
+        <label>אימייל</label>
+        <input type="text" [(ngModel)]="email">
+    </div>
+
+    <div class="field">
+        <label>תוכן הפנייה</label>
+        <textarea [(ngModel)]="content"></textarea>
+    </div>
+
+    <div class="field">
+        <label>רמת שביעות רצון</label>
+        <app-range [(value)]="satisfaction" [min]="0" [max]="5"></app-range>
+    </div>
+
+    <div class="field">
+        <label>רמת שמחה</label>
+        <app-range [(value)]="happines" [min]="50" (kuku)="banana($event)"></app-range>
+    </div>
+
+    <div class="field">
+        <button (click)="send()">שלח פנייה</button>
+    </div>
+</div>
