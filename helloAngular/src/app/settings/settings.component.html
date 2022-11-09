@@ -2,3 +2,23 @@
     <label>רמת בהירות</label>
     <app-range [(value)]="brightness" [min]="0" [max]="100" (valueChange)="brightnessChange()"></app-range>
 </div>
+
+<div class="frame">
+    <label>ריווח בין תווים</label>
+    <app-range [(value)]="spacing" [min]="0" [max]="15" (valueChange)="spacingChange()"></app-range>
+</div>
+
+<div class="frame">
+    <label>גודל גופן</label>
+    <app-range [(value)]="fontSize" [min]="10" [max]="50" (valueChange)="fontSizeChange()"></app-range>
+</div>
+
+<div class="frame">
+    <label>ריווח פנימי של האתר</label>
+    <app-range [(value)]="margin" [min]="1" [max]="10" (valueChange)="marginChange()"></app-range>
+</div>
+
+<div class="frame">
+    <label>היפוך צבעים</label>
+    <app-range [(value)]="invert" [min]="0" [max]="100" (valueChange)="invertChange()"></app-range>
+</div>

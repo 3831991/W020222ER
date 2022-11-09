@@ -1,3 +1,27 @@
-<p>
-  users works!
-</p>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>אימייל</th>
+            <th>טלפון</th>
+            <th>האם חסום?</th>
+            <th>תאריך לידה</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let u of users; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ u.firstName }}</td>
+            <td>{{ u.lastName }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.phone }}</td>
+            <td>{{ u.isBlocked }}</td>
+            <td>{{ u.birthday }}</td>
+            <td><button (click)="remove(u)">x</button></td>
+        </tr>
+    </tbody>
+</table>

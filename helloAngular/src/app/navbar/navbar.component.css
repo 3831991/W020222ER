@@ -11,10 +11,10 @@ a {
     color: white;
 }
 
-a.active {
-    background-color: #ffffff47;
-}
-
 a:hover {
     background-color: #ffffff56;
+}
+
+.navActive {
+    background-color: #ffffff47;
 }

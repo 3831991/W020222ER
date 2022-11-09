@@ -12,6 +12,7 @@ import { UsersComponent } from './users/users.component';
 import { RangeComponent } from './range/range.component';
 import { SettingsComponent } from './settings/settings.component';
 import { routes } from './routing';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { routes } from './routing';
         UsersComponent,
         RangeComponent,
         SettingsComponent,
+        HomeComponent,
     ],
     imports: [
         BrowserModule,
