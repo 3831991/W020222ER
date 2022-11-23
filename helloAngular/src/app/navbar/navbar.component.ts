@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
         { route: '/list', title: 'רשימה' },
         { route: '/contact', title: 'צור קשר' },
         { route: '/setting', title: 'הגדרות' },
+        { route: '/gallery', title: 'גלרייה' },
     ];
 
     constructor(router: Router) {

@@ -13,6 +13,11 @@ import { RangeComponent } from './range/range.component';
 import { SettingsComponent } from './settings/settings.component';
 import { routes } from './routing';
 import { HomeComponent } from './home/home.component';
+import { UtilityService } from './utility.service';
+import { AlertComponent } from './alert/alert.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { FirstUpperPipe } from './first-upper.pipe';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
     declarations: [
@@ -24,6 +29,10 @@ import { HomeComponent } from './home/home.component';
         RangeComponent,
         SettingsComponent,
         HomeComponent,
+        AlertComponent,
+        GalleryComponent,
+        FirstUpperPipe,
+        SearchPipe,
     ],
     imports: [
         BrowserModule,
@@ -31,7 +40,9 @@ import { HomeComponent } from './home/home.component';
         HttpClientModule,
         RouterModule.forRoot(routes)
     ],
-    providers: [],
+    providers: [
+        UtilityService,
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

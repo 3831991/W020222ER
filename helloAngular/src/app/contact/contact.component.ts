@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilityService } from '../utility.service';
 
 @Component({
     selector: 'app-contact',
@@ -20,13 +21,15 @@ export class ContactComponent implements OnInit {
         console.log(`content: ${this.content}`);
         console.log(`satisfaction: ${this.satisfaction}`);
         console.log(`happines: ${this.happines}`);
+
+        this.utility.alert("הטופס נשלח בהצלחה");
     }
 
     banana(ev: string) {
         console.log(ev)
     }
 
-    constructor() { }
+    constructor(private utility: UtilityService) { }
 
     ngOnInit() {
 

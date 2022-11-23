@@ -1,3 +1,7 @@
+<h1>משתמשים</h1>
+
+<input type="search" [(ngModel)]="searchVal" placeholder="חיפוש">
+
 <table>
     <thead>
         <tr>
@@ -13,14 +17,14 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let u of users; let i = index">
+        <tr *ngFor="let u of users | search : searchVal; let i = index">
             <td>{{ i + 1 }}</td>
             <td>{{ u.firstName }}</td>
             <td>{{ u.lastName }}</td>
-            <td>{{ u.email }}</td>
+            <td>{{ u.email | upper }}</td>
             <td>{{ u.phone }}</td>
             <td>{{ u.isBlocked }}</td>
-            <td>{{ u.birthday }}</td>
+            <td>{{ u.birthday | date : 'dd/MM/yyyy' }}</td>
             <td><button (click)="remove(u)">x</button></td>
         </tr>
     </tbody>

@@ -1,5 +1,6 @@
 import { Route, Routes } from "@angular/router";
 import { ContactComponent } from "./contact/contact.component";
+import { GalleryComponent } from "./gallery/gallery.component";
 import { HomeComponent } from "./home/home.component";
 import { ListComponent } from "./list/list.component";
 import { SettingsComponent } from "./settings/settings.component";
@@ -11,4 +12,5 @@ export const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'users', component: UsersComponent },
     { path: 'setting', component: SettingsComponent },
+    { path: 'gallery', component: GalleryComponent },
 ];
