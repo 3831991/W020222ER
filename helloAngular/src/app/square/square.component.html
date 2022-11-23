@@ -1,0 +1,10 @@
+<p>רוחב:</p>
+<app-range [(value)]="width" [min]="0" [max]="600"></app-range>
+
+<p>גובה:</p>
+<app-range [(value)]="height" [min]="0" [max]="600"></app-range>
+
+<p>צבע:</p>
+<input type="color" [(ngModel)]="color">
+
+<div [style.width.px]="width" [style.height.px]="height" [style.background-color]="color"></div>

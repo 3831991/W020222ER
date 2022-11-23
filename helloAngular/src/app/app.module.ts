@@ -18,6 +18,7 @@ import { AlertComponent } from './alert/alert.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FirstUpperPipe } from './first-upper.pipe';
 import { SearchPipe } from './search.pipe';
+import { SquareComponent } from './square/square.component';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { SearchPipe } from './search.pipe';
         GalleryComponent,
         FirstUpperPipe,
         SearchPipe,
+        SquareComponent,
     ],
     imports: [
         BrowserModule,
