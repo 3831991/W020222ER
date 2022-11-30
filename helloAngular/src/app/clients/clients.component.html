@@ -1,1 +1,40 @@
-<p *ngFor="let item of clients">{{ item.firstName }} {{ item.lastName }}</p>
+<h1>לקוחות</h1>
+
+<p *ngIf="!clients.length">אין עדיין לקוחות</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>תאריך הוספה</th>
+            <th>אימייל</th>
+            <th>טלפון</th>
+            <th>עיר</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td><input type="text" [(ngModel)]="addedItem.firstName"></td>
+            <td><input type="text" [(ngModel)]="addedItem.lastName"></td>
+            <td></td>
+            <td><input type="text" [(ngModel)]="addedItem.email"></td>
+            <td><input type="text" [(ngModel)]="addedItem.phone"></td>
+            <td><input type="text" [(ngModel)]="addedItem.city"></td>
+            <td><button (click)="add()">+ הוסף</button></td>
+        </tr>
+        <tr *ngFor="let item of clients let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.firstName }}</td>
+            <td>{{ item.lastName }}</td>
+            <td>{{ item.createTime | date : 'dd/MM/yyyy' }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.city }}</td>
+            <td><button (click)="remove(item.id)">x</button></td>
+        </tr>
+    </tbody>
+</table>

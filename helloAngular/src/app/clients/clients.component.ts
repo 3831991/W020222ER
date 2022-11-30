@@ -11,9 +11,41 @@ export class ClientsComponent implements OnInit {
 
     clients: Client[] = [];
 
+    // אובייקט לצורך הוספת לקוח חדש
+    addedItem: Client = {
+        id: 0,
+        createTime: '',
+        city: '',
+        email: '',
+        firstName: '',
+        lastName: '',
+        phone: '',
+    };
+
     remove(id: number) {
         this.http.delete<void>(`http://localhost:3000/clients/${id}`).subscribe(() => {
+            // מחפשים את האינדקס של האובייקט למחיקה (שנמחק)
+            const i = this.clients.findIndex(x => x.id == id);
+            // מוחקים את האובייקט שנמחק בשרת מהמערך שלנו
+            this.clients.splice(i, 1);
+        });
+    }
 
+    add() {
+        this.http.post<Client>("http://localhost:3000/clients", this.addedItem).subscribe(item => {
+            // מוסיפים את האובייקט שקיבלנו מהשרת למערך
+            this.clients.unshift(item);
+
+            // מאפסים את האובייקט של ההוספה
+            this.addedItem = {
+                id: 0,
+                createTime: '',
+                city: '',
+                email: '',
+                firstName: '',
+                lastName: '',
+                phone: '',
+            };
         });
     }
 
