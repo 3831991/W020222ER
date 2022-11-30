@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit {
         { route: '/contact', title: 'צור קשר' },
         { route: '/setting', title: 'הגדרות' },
         { route: '/gallery', title: 'גלרייה' },
+        { route: '/clients', title: 'לקוחות' },
     ];
 
     constructor(router: Router) {
