@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import { NextFunction } from 'express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -10,6 +11,10 @@ async function bootstrap() {
         credentials: true,
         allowedHeaders: 'Content-Type, Accept',
     });
+
+    // app.use((req: Request, res: Response, next: NextFunction) => {
+    //     setTimeout(next, 2 * 1000);
+    // })
 
     await app.listen(3000);
 }

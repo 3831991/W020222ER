@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../utility.service';
 
@@ -15,24 +16,25 @@ export class ContactComponent implements OnInit {
     happines: number = 80;
 
     send() {
-        console.log(`fullName: ${this.fullName}`);
-        console.log(`phone: ${this.phone}`);
-        console.log(`email: ${this.email}`);
-        console.log(`content: ${this.content}`);
-        console.log(`satisfaction: ${this.satisfaction}`);
-        console.log(`happines: ${this.happines}`);
+        const obj = {
+            fullName: this.fullName,
+            phone: this.phone,
+            email: this.email,
+            content: this.content,
+            satisfaction: this.satisfaction,
+            happines: this.happines,
+        };
 
-        this.utility.alert("הטופס נשלח בהצלחה");
+        this.http.post<void>("http://localhost:3000/contact", obj).subscribe(() => {
+            this.utility.alert("הטופס נשלח בהצלחה");
+        });
     }
 
     banana(ev: string) {
         console.log(ev)
     }
 
-    constructor(private utility: UtilityService) { }
+    constructor(private utility: UtilityService, private http: HttpClient) { }
 
-    ngOnInit() {
-
-    }
-
+    ngOnInit() { }
 }

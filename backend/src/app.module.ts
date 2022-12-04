@@ -5,6 +5,9 @@ import { ClientsController } from './clients/clients.controller';
 import { ClientsService } from './clients/clients.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Client } from './clients/clients.entity';
+import { ContactController } from './contact/contact.controller';
+import { ContactService } from './contact/contact.service';
+import { Contact } from './contact/contact.entity';
 
 @Module({
     imports: [
@@ -21,15 +24,17 @@ import { Client } from './clients/clients.entity';
             synchronize: true,
             logging: true,
         }),
-        TypeOrmModule.forFeature([Client]),
+        TypeOrmModule.forFeature([Client, Contact]),
     ],
     controllers: [
         AppController,
         ClientsController,
+        ContactController,
     ],
     providers: [
         AppService,
         ClientsService,
+        ContactService,
     ],
 })
 export class AppModule { }
