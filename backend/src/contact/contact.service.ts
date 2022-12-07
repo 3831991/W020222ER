@@ -6,12 +6,28 @@ import { Contact } from "./contact.entity";
 @Injectable()
 export class ContactService {
 
-    getContacts() {
-        return this.rep.find();
+    async getContacts() {
+        return await this.rep.find();
     }
 
-    addContact(item: Contact) {
-        return this.rep.save(item);
+    async addContact(item: Contact) {
+        return await this.rep.save(item);
+    }
+
+    async complete(id: number) {
+        const item = await this.rep.findOne({ where: { id } });
+        item.isCompleted = true;
+        this.rep.save(item);
+    }
+
+    async undo(id: number) {
+        const item = await this.rep.findOne({ where: { id } });
+        item.isCompleted = false;
+        this.rep.save(item);
+    }
+
+    async removeContact(id: number) {
+        return await this.rep.delete(id);
     }
 
     constructor(
