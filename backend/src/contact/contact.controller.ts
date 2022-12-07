@@ -17,12 +17,12 @@ export class ContactController {
 
     @Put("contact/:id/complete")
     async complete(@Param('id', new ParseIntPipe()) contactId: number) {
-        await this.complete(contactId);
+        await this.contactService.complete(contactId);
     }
 
     @Put("contact/:id/undo")
     async undo(@Param('id', new ParseIntPipe()) contactId: number) {
-        await this.undo(contactId);
+        await this.contactService.undo(contactId);
     }
 
     @Delete("contact/:id")
