@@ -25,6 +25,18 @@ export class ClientsService {
         return this.rep.save(client);
     }
 
+    async favorite(id: number) {
+        const item = await this.rep.findOne({ where: { id } });
+        item.isFavorite = true;
+        this.rep.save(item);
+    }
+
+    async unfavorite(id: number) {
+        const item = await this.rep.findOne({ where: { id } });
+        item.isFavorite = false;
+        this.rep.save(item);
+    }
+
     removeClientById(clientId: number) {
         this.rep.delete(clientId);
     }

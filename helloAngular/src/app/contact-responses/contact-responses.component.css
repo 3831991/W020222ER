@@ -17,3 +17,12 @@ td {
 tr:nth-child(even) {
     background-color: #ccc;
 }
+
+.completed td:first-child {
+    border-right: 5px solid green;
+}
+
+.completed td {
+    background-color: #aac651;
+    font-weight: 700;
+}

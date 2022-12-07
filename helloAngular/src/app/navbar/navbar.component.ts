@@ -11,14 +11,14 @@ export class NavbarComponent implements OnInit {
     active: string;
 
     menu: Nav[] = [
-        { route: '/', title: 'בית' },
-        { route: '/users', title: 'משתמשים' },
-        { route: '/list', title: 'רשימה' },
-        { route: '/contact', title: 'צור קשר' },
-        { route: '/setting', title: 'הגדרות' },
-        { route: '/gallery', title: 'גלרייה' },
-        { route: '/clients', title: 'לקוחות' },
-        { route: '/contact-responses', title: 'ניהול פניות' },
+        { route: '/', title: 'בית', icon: 'home' },
+        { route: '/users', title: 'משתמשים', icon: 'users' },
+        { route: '/list', title: 'רשימה', icon: 'list' },
+        { route: '/contact', title: 'צור קשר', icon: 'envelope' },
+        { route: '/setting', title: 'הגדרות', icon: 'cog' },
+        { route: '/gallery', title: 'גלרייה', icon: 'camera' },
+        { route: '/clients', title: 'לקוחות', icon: 'user' },
+        { route: '/contact-responses', title: 'ניהול פניות', icon: 'server' },
     ];
 
     constructor(router: Router) {

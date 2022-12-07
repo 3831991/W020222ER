@@ -29,6 +29,16 @@ export class ClientsController {
         return this.clientsService.updateClient(item);
     }
 
+    @Put(":id/favorite")
+    async favorite(@Param('id', new ParseIntPipe()) clientId: number) {
+        await this.clientsService.favorite(clientId);
+    }
+
+    @Put(":id/unfavorite")
+    async unfavorite(@Param('id', new ParseIntPipe()) clientId: number) {
+        await this.clientsService.unfavorite(clientId);
+    }
+
     // מחיקת לקוח
     @Delete(":id")
     removeClient(@Param('id', new ParseIntPipe()) clientId: number) {

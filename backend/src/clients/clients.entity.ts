@@ -22,4 +22,7 @@ export class Client {
 
     @Column({ type: 'varchar', length: 30 })
     city: string;
+
+    @Column({ type: 'boolean', default: false })
+    isFavorite?: boolean;
 }

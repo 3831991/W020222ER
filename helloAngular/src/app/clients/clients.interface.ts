@@ -6,4 +6,5 @@ export interface Client {
     phone: string;
     email: string;
     city: string;
+    isFavorite: boolean;
 }
