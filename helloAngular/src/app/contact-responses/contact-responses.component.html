@@ -1,0 +1,30 @@
+<h2>ניהול פניות</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>זמן</th>
+            <th>שם מלא</th>
+            <th>טלפון</th>
+            <th>אימייל</th>
+            <th>תוכן</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of contactList; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ c.createTime | date : 'dd/MM/yyyy' }}</td>
+            <td>{{ c.fullName }}</td>
+            <td>{{ c.phone }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.content }}</td>
+            <td>
+                <button *ngIf="!c.isCompleted" (click)="complete(c)">סמן כטופל</button>
+                <button *ngIf="c.isCompleted" (click)="undo(c)">בטל טיפול</button>
+                <button (click)="remove(c.id)">x</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

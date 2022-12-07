@@ -20,6 +20,7 @@ import { FirstUpperPipe } from './first-upper.pipe';
 import { SearchPipe } from './search.pipe';
 import { SquareComponent } from './square/square.component';
 import { ClientsComponent } from './clients/clients.component';
+import { ContactResponsesComponent } from './contact-responses/contact-responses.component';
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import { ClientsComponent } from './clients/clients.component';
         SearchPipe,
         SquareComponent,
         ClientsComponent,
+        ContactResponsesComponent,
     ],
     imports: [
         BrowserModule,
