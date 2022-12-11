@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
         { route: '/gallery', title: 'גלרייה', icon: 'camera' },
         { route: '/clients', title: 'לקוחות', icon: 'user' },
         { route: '/contact-responses', title: 'ניהול פניות', icon: 'server' },
+        { route: '/tasks', title: 'משימות', icon: 'check-square-o' },
     ];
 
     constructor(router: Router) {

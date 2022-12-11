@@ -1,0 +1,40 @@
+.frame {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.column {
+    padding: 20px;
+}
+
+.cards {
+    min-height: 300px;
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 #00000045;
+}
+
+.card {
+    background-color: #ffffffd1;
+    margin-bottom: 8px;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 #00000045;
+}
+
+.card p {
+    margin: 0px;
+    font-size: 18px;
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+.card button {
+    padding: 8px;
+    border: 0;
+    border-radius: 5px;
+    margin: 2px 5px;
+    cursor: pointer;
+    color: white;
+}

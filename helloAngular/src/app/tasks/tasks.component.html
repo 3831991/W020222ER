@@ -1,0 +1,14 @@
+<div class="frame">
+    <div *ngFor="let s of sections" class="column">
+        <h2>{{ s.title }}</h2>
+
+        <div class="cards" [style.background-color]="s.color">
+            <div *ngFor="let item of s.cards" class="card">
+                <p>{{ item.task }}</p>
+                <button *ngIf="s.status > TaskStatuses.open" (click)="undo(s, item)" style="background: red;">החזר <i class="fa fa-arrow-right"></i></button>
+                <button *ngIf="s.status == TaskStatuses.open" (click)="prossing(s, item)" style="background: blue;">העבר לטיפול <i class="fa fa-arrow-left"></i></button>
+                <button *ngIf="s.status == TaskStatuses.inProgress" (click)="complete(s, item)" style="background: blue;">טופל <i class="fa fa-check"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

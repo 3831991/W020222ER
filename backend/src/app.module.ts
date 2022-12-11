@@ -8,6 +8,9 @@ import { Client } from './clients/clients.entity';
 import { ContactController } from './contact/contact.controller';
 import { ContactService } from './contact/contact.service';
 import { Contact } from './contact/contact.entity';
+import { Task } from './tasks/tasks.entity';
+import { TasksController } from './tasks/tasks.controller';
+import { TasksService } from './tasks/tasks.service';
 
 @Module({
     imports: [
@@ -24,17 +27,19 @@ import { Contact } from './contact/contact.entity';
             synchronize: true,
             logging: true,
         }),
-        TypeOrmModule.forFeature([Client, Contact]),
+        TypeOrmModule.forFeature([Client, Contact, Task]),
     ],
     controllers: [
         AppController,
         ClientsController,
         ContactController,
+        TasksController,
     ],
     providers: [
         AppService,
         ClientsService,
         ContactService,
+        TasksService,
     ],
 })
 export class AppModule { }
