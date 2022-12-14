@@ -65,6 +65,23 @@ export class TasksComponent implements OnInit {
         this.statusChange(s, item, TaskStatuses.complete);
     }
 
+    dragover(s: Structure) {
+        this.sections.forEach(x => x.isDrag = false);
+        s.isDrag = true;
+    }
+
+    dragend(s: Structure, item: Task) {
+        const target = this.sections.find(x => x.isDrag);
+
+        if (target) {
+            if (target.status !== s.status) {
+                this.statusChange(s, item, target.status);
+            }
+        }
+
+        this.sections.forEach(x => x.isDrag = false);
+    }
+
     constructor(private http: HttpClient) { }
 
     ngOnInit() {

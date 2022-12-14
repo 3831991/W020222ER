@@ -17,4 +17,5 @@ export interface Structure {
     title: string;
     color: string;
     cards: Task[];
+    isDrag?: boolean;
 }

@@ -38,3 +38,16 @@
     cursor: pointer;
     color: white;
 }
+
+.drag {
+    border: 5px dashed gray;
+}
+
+.card:active {
+    opacity: 0.4;
+    cursor: grab;
+}
+
+[draggable] {
+    user-select: none;
+}
