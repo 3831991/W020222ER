@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Task, TaskStatuses } from "./tasks.entity";
@@ -17,6 +17,22 @@ export class TasksService {
             item.status = status;
             this.rep.save(item);
         }
+    }
+
+    async addTask(item: Task) {
+        if (!item.task) {
+            throw new HttpException("על איזו משימה כבודו מדבר?", HttpStatus.BAD_REQUEST);
+        }
+
+        item.status = TaskStatuses.open;
+        item.id = null;
+        item.createTime = new Date();
+
+        return this.rep.save(item);
+    }
+
+    async removeTask(taskId: number) {
+        this.rep.delete(taskId);
     }
 
     constructor(

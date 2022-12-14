@@ -11,6 +11,7 @@ export class TasksComponent implements OnInit {
     // הכנסנו את זה למשנה בתוך הקלאס ע"מ שנוכל להשתמש בו ב-HTML
     // לא חובה להשתמש באותו שם - אך ככה מקובל
     TaskStatuses = TaskStatuses;
+    newTask: string;
 
     sections: Structure[] = [
         {
@@ -80,6 +81,23 @@ export class TasksComponent implements OnInit {
         }
 
         this.sections.forEach(x => x.isDrag = false);
+    }
+
+    addTask() {
+        const sub = this.http.post<Task>("http://localhost:3000/tasks", { task: this.newTask }).subscribe(data => {
+            this.sections.find(x => x.status == TaskStatuses.open).cards.push(data);
+            this.newTask = '';
+            sub.unsubscribe();
+        });
+    }
+
+    remove(s: Structure, item: Task) {
+        const sub = this.http.delete<void>(`http://localhost:3000/tasks/${item.id}`).subscribe(() => {
+            const i = s.cards.findIndex(x => x.id == item.id);
+            s.cards.splice(i, 1);
+
+            sub.unsubscribe();
+        });
     }
 
     constructor(private http: HttpClient) { }

@@ -21,6 +21,15 @@
     padding: 12px;
     border-radius: 5px;
     box-shadow: 0 0 6px 0 #00000045;
+    position: relative;
+}
+
+.card i.fa-remove {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    color: red;
+    cursor: pointer;
 }
 
 .card p {
