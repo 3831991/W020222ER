@@ -60,3 +60,14 @@
 [draggable] {
     user-select: none;
 }
+
+input {
+    padding: 8px 12px;
+    margin: 30px auto;
+    margin-bottom: -20px;
+    border-radius: 5px;
+    border: 1px solid;
+    width: 80%;
+    display: block;
+    position: relative;
+}
