@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Structure, Task, TaskStatuses } from './tasks.interface';
+import { LevelTypes, Structure, Task, TaskStatuses } from './tasks.interface';
 
 @Component({
     selector: 'app-tasks',
@@ -34,7 +34,25 @@ export class TasksComponent implements OnInit {
         },
     ];
 
-    statusChange(s: Structure, item: Task, newStatus: TaskStatuses) {
+    urlevels = [
+        {
+            level: LevelTypes.low,
+            title: 'נמוכה',
+            color: 'green',
+        },
+        {
+            level: LevelTypes.medium,
+            title: 'בינונית',
+            color: 'yellow',
+        },
+        {
+            level: LevelTypes.high,
+            title: 'גבוהה',
+            color: 'red',
+        },
+    ];
+
+    private statusChange(s: Structure, item: Task, newStatus: TaskStatuses) {
         const sub = this.http.put<void>(`http://localhost:3000/tasks/${item.id}/status/${newStatus}`, {}).subscribe(() => {
             // מחקנו מהמערך הנוכחי את הפנייה (היות והיא צריכה לעבוד לכרטיסיה אחרת)
             const i = s.cards.findIndex(x => x.id == item.id);
@@ -115,5 +133,4 @@ export class TasksComponent implements OnInit {
             sub.unsubscribe();
         });
     }
-
 }

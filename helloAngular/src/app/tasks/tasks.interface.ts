@@ -3,6 +3,7 @@ export interface Task {
     createTime: Date;
     task: string;
     status: TaskStatuses;
+    level: LevelTypes;
     isDeleted: boolean;
 }
 
@@ -18,4 +19,10 @@ export interface Structure {
     color: string;
     cards: Task[];
     isDrag?: boolean;
+}
+
+export enum LevelTypes {
+    low = 0,
+    medium = 1,
+    high = 2,
 }

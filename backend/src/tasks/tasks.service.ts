@@ -28,11 +28,16 @@ export class TasksService {
         item.id = null;
         item.createTime = new Date();
 
-        return this.rep.save(item);
+        return await this.rep.save(item);
     }
 
     async removeTask(taskId: number) {
-        this.rep.delete(taskId);
+        const item = await this.rep.findOne({ where: { id: taskId } });
+
+        if (item) {
+            item.isDeleted = true;
+            this.rep.save(item);
+        }
     }
 
     constructor(
