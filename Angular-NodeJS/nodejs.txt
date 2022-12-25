@@ -1,0 +1,5 @@
+npm init -y
+npm install express --save
+npm i -g nodemon -D
+npm i cors --save
+npm install mysql --save

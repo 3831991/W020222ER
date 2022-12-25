@@ -1,0 +1,27 @@
+<h1>טופס יצירת קשר</h1>
+
+<p *ngIf="isSended">הטופס נשלח בהצלחה</p>
+
+<form [formGroup]="form" *ngIf="!isSended">
+    <div class="field">
+        <label>שם מלא:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="fullName">
+    </div>
+
+    <div class="field">
+        <label>טלפון:</label>
+        <input class="w3-input w3-border w3-round" type="tel" formControlName="phone">
+    </div>
+
+    <div class="field">
+        <label>אימייל:</label>
+        <input class="w3-input w3-border w3-round" type="email" formControlName="email">
+    </div>
+
+    <div class="field">
+        <label>תוכן:</label>
+        <textarea class="w3-input w3-border w3-round" formControlName="content" cols="30" rows="10"></textarea>
+    </div>
+
+    <button class="w3-btn w3-green w3-round w3-block" [disabled]="!form.valid" (click)="send()">שליחת טופס</button>
+</form>
