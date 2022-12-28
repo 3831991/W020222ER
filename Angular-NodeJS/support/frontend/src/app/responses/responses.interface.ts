@@ -4,4 +4,5 @@ export interface Response {
     phone: string;
     email: string;
     content: string;
+    isCompleted: boolean;
 }

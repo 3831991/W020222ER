@@ -1,1 +1,26 @@
-<p>responses works!</p>
+<table class="w3-table w3-striped w3-bordered">
+    <thead>
+        <tr>
+            <th>שם הפונה</th>
+            <th>טלפון</th>
+            <th>אימייל</th>
+            <th>תוכן</th>
+            <th>האם טופל?</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data">
+            <td>{{ item.fullName }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.content }}</td>
+            <td>{{ item.isCompleted ? 'V' : 'X' }}</td>
+            <td>
+                <button class="w3-btn w3-red w3-round" (click)="remove(item)">x</button>
+                <button class="w3-btn w3-green w3-round" (click)="complete(item)">סמן כטופל</button>
+                <button class="w3-btn w3-orange w3-round" (click)="undo(item)">בטל טיפול</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
