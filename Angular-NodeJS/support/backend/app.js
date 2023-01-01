@@ -21,4 +21,6 @@ app.get('/', (req, res) => {
 const contact = require('./handlers/contact');
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.addContact);
+app.put('/contact/:id/status/complete', contact.complete);
+app.put('/contact/:id/status/undo', contact.undo);
 app.delete('/contact/:id', contact.removeContact);

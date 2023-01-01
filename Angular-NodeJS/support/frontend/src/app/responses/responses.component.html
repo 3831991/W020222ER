@@ -18,8 +18,8 @@
             <td>{{ item.isCompleted ? 'V' : 'X' }}</td>
             <td>
                 <button class="w3-btn w3-red w3-round" (click)="remove(item)">x</button>
-                <button class="w3-btn w3-green w3-round" (click)="complete(item)">סמן כטופל</button>
-                <button class="w3-btn w3-orange w3-round" (click)="undo(item)">בטל טיפול</button>
+                <button *ngIf="!item.isCompleted" class="w3-btn w3-green w3-round" (click)="complete(item)">סמן כטופל</button>
+                <button *ngIf="item.isCompleted" class="w3-btn w3-orange w3-round" (click)="undo(item)">בטל טיפול</button>
             </td>
         </tr>
     </tbody>

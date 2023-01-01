@@ -11,6 +11,10 @@ export class ResponsesComponent {
     data: Response[] = [];
 
     remove(item: Response) {
+        if (!confirm('Are you sure you want to delete?')) {
+            return;
+        }
+
         const sub = this.http.delete<void>(`http://localhost:3000/contact/${item.id}`).subscribe(() => {
             const i = this.data.findIndex(x => x.id === item.id);
             this.data.splice(i, 1);
