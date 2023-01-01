@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <title>File Upload</title>
+    </head>
+    <body>
+        <h1>העלאת קובץ</h1>
+
+        <form action="http://localhost:770/gallery/upload" method="post" enctype="multipart/form-data">
+            <div class="field">
+                <input class="w3-input w3-border w3-round" type="file" name="myFile" accept="image/png, image/gif, image/jpeg" onchange="imageChange(event)">
+                <img style="display: none;" width="100%">
+                <br>
+            </div>
+
+            <button type="submit" class="w3-btn w3-green w3-round">העלה קובץ</button>
+        </form>
+    </body>
+</html>
