@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require('cors');
 const formidable = require('formidable');
 const fs = require('fs');
-const path = require('path');
 const app = express();
 
 app.use(cors({
@@ -25,7 +24,9 @@ app.post('/gallery/upload', (req, res) => {
         // זה השם שננו לקובץ ב-HTML
         const myFile = files.myFile;
 
+        // הנתיב הזמני שבו נמצא כרגע הקובץ שהועלה זה עתה
         const oldPath = myFile.filepath;
+        // היעד שבו אנו שומרים את הקובץ
         const newPath = `./images/${myFile.originalFilename}`;
 
         fs.copyFile(oldPath, newPath, (err) => {
@@ -43,7 +44,30 @@ app.post('/gallery/upload', (req, res) => {
     });
 });
 
+app.post('/gallery/upload/multi', (req, res) => {
+    const form = new formidable.IncomingForm();
+
+    form.parse(req, (err, fields, files) => {
+
+        for (const key in files) {
+            const file = files[key];
+            const oldPath = file.filepath;
+            const newPath = `./images/${file.originalFilename}`;
+    
+            fs.copyFile(oldPath, newPath, (err) => {
+                if (err) {
+                    console.log(err);
+                }
+                
+            });
+
+            res.end();
+        }
+
+    });
+});
+
 app.get('/gallery/image/:imageName', (req, res) => {
     // __dirname = מביא את הניתוב של התיקייה שבה נמצא הקובץ הנוכחי
-    res.sendFile(path.resolve(`${__dirname}/images/${req.params.imageName}`));
+    res.sendFile(`${__dirname}/images/${req.params.imageName}`);
 });
