@@ -64,3 +64,28 @@ function uploadFiles() {
         body: formData,
     });
 }
+
+function remove(elemId, imageName) {
+    fetch(`http://localhost:770/gallery/image/${imageName}`, {
+        method: 'DELETE',
+    }).then(() => {
+        document.getElementById(elemId).remove();
+    });
+}
+
+function getImages() {
+    fetch("http://localhost:770/gallery/images").then(response => {
+        return response.json();
+    }).then(data => {
+        const div = document.querySelector("#form");
+
+        data.forEach((imageName, i) => {
+            div.innerHTML += `
+                <div class="w3-third" id="image${i}">
+                    <div class="w3-card" style="background-image: url('http://localhost:770/gallery/image/${imageName}')">
+                        <button class="w3-btn w3-red w3-round" onclick="remove('image${i}', '${imageName}')">x</button>
+                    </div>
+                </div>`;
+        });
+    });
+}

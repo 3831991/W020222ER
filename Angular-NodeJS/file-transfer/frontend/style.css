@@ -32,3 +32,23 @@ h1 {
     font-size: 2em;
     color: gray;
 }
+
+.w3-third {
+    padding: 12px;
+}
+
+.w3-card {
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.w3-card button {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.w3-card:hover button {
+    opacity: 1;
+}

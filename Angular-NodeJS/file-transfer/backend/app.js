@@ -61,13 +61,32 @@ app.post('/gallery/upload/multi', (req, res) => {
                 
             });
 
-            res.end();
+            res.send();
         }
-
     });
 });
 
 app.get('/gallery/image/:imageName', (req, res) => {
     // __dirname = מביא את הניתוב של התיקייה שבה נמצא הקובץ הנוכחי
     res.sendFile(`${__dirname}/images/${req.params.imageName}`);
+});
+
+app.get('/gallery/images', (req, res) => {
+    fs.readdir(`${__dirname}/images`, (err, files) => {
+        if (err) {
+            throw err;
+        }
+
+        res.send(files);
+    });
+});
+
+app.delete('/gallery/image/:imageName', (req, res) => {
+    fs.unlink(`${__dirname}/images/${req.params.imageName}`, (err) => {
+        if (err) {
+            throw err;
+        }
+
+        res.send();
+    });
 });
