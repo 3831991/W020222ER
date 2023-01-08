@@ -1,10 +1,28 @@
-th, td {
-    text-align: center;
+// משתנים
+$bg: aquamarine;
+$size: 20px;
+
+@function concat($num1, $num2) {
+    @return $num1 + $num2;
 }
 
-.w3-btn {
-    margin: 0 3px;
-    padding: 3px 8px;
-    font-size: 14px;
-    border-radius: 11px;
+// כתיבה היררכית
+th, td {
+    text-align: center;
+    background-color: $bg;
+
+    button {
+        margin: 0 3px;
+        padding: 3px 8px;
+        font-size: $size;
+        border-radius: concat(20px, 30px);
+
+        &:hover {
+            // שימוש בפונקציה ההופת את הצבע לכהה
+            background-color: darken($bg, 50) !important;
+            color: white !important;
+            // פעולות מתמטיות על משתנים
+            font-size: $size * 1.3;
+        }
+    }
 }

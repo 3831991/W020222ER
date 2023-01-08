@@ -52,3 +52,7 @@ h1 {
 .w3-card:hover button {
     opacity: 1;
 }
+
+.dragOver {
+    background-color: #b2be57;
+}

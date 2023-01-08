@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ondragover="event.preventDefault()" ondrop="event.preventDefault()">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
         <h1>העלאת קבצים</h1>
 
         <div id="form">
-            <div id="dropArea" ondragover="dragOver(event)" ondrop="dropFiles(event)"></div>
+            <div id="dropArea" ondragover="dragOver(event)" ondragleave="isDrag(false)" ondrop="dropFiles(event)"></div>
 
             <button class="w3-btn w3-green w3-round" onclick="uploadFiles()">שלח קבצים</button>
 

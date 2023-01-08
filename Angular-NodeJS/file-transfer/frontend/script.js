@@ -24,10 +24,12 @@ function imageChange(ev) {
 
 function dragOver(ev) {
     ev.preventDefault();
+    isDrag(true);
 }
 
 function dropFiles(ev) {
     ev.preventDefault();
+    isDrag(false);
 
     const files = ev.dataTransfer.files;
     filesToUpload = files;
@@ -88,4 +90,14 @@ function getImages() {
                 </div>`;
         });
     });
+}
+
+function isDrag(bool) {
+    const elem = document.querySelector("#dropArea");
+    
+    if (bool) {
+        elem.classList.add("dragOver");
+    } else {
+        elem.classList.remove("dragOver");
+    }
 }
