@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { User } from './user.interface';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-signup',
@@ -38,9 +39,9 @@ export class SignupComponent {
                 sub.unsubscribe();
             }
         })).subscribe(data => {
-            console.log(data);
+            this.router.navigate(['/login']);
         });
     }
 
-    constructor(private http: HttpService) { }
+    constructor(private http: HttpService, private router: Router) { }
 }

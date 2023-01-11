@@ -8,3 +8,6 @@ npm install mysql --save
 npm install bcrypt --save
 /** ספרייה לצורך שימוש בסשיין **/
 npm install express-session --save
+
+/** לצורך עבודה עם ES6 **/
+npm install esm --save
