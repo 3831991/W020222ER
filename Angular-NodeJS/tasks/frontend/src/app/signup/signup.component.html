@@ -1,0 +1,25 @@
+<h1>יצירת משתמש</h1>
+
+<form [formGroup]="signupForm">
+    <div class="field">
+        <label><i class="fa fa-user"></i> שם מלא:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="fullName">
+    </div>
+
+    <div class="field">
+        <label><i class="fa fa-envelope"></i> אימייל:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="email">
+    </div>
+
+    <div class="field">
+        <label><i class="fa fa-user"></i> שם משתמש:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="userName">
+    </div>
+
+    <div class="field">
+        <label><i class="fa fa-asterisk"></i> סיסמה:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="password">
+    </div>
+
+    <button class="w3-btn w3-green w3-round w3-block" [disabled]="!signupForm.valid" (click)="signup()">צור משתמש <i class="fa fa-check"></i></button>
+</form>

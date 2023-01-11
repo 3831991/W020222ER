@@ -3,3 +3,8 @@ npm install express --save
 npm i -g nodemon -D
 npm i cors --save
 npm install mysql --save
+
+/** ספרייה לצורך הצפנת הסיסמה **/
+npm install bcrypt --save
+/** ספרייה לצורך שימוש בסשיין **/
+npm install express-session --save
