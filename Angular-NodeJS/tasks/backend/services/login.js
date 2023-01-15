@@ -14,6 +14,7 @@ export function getLoginStatus(req, res) {
 }
 
 export function login(req, res) {
+    delete req.session.user;
     const sqlQuery = "SELECT * FROM `users` WHERE `userName`=? AND `password`=MD5(?)";
     const paramArr = [req.body.userName.trim(), req.body.password.trim()];
 
