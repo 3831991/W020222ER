@@ -1,1 +1,5 @@
+<div *ngIf="utility.getUser()">
+    {{ utility.getUser()?.fullName }} ברוך הבא!
+</div>
+
 <router-outlet></router-outlet>

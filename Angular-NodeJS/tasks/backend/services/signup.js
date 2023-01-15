@@ -2,7 +2,7 @@ import { con } from '../sqlConnect';
 
 export function signup(req, res) {
     const sqlQuery = "INSERT INTO `users`(`createdTime`, `fullName`, `email`, `userName`, `password`) VALUES (CURRENT_TIME, ?, ?, ?, MD5(?))";
-    const paramArr = [req.body.fullName, req.body.email, req.body.userName, req.body.password];
+    const paramArr = [req.body.fullName, req.body.email, req.body.userName.trim(), req.body.password.trim()];
 
     con.query(sqlQuery, paramArr, (err, result) => {
         if (err) {

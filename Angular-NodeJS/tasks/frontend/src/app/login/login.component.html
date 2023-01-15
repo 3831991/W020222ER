@@ -1,1 +1,17 @@
-<p>login works!</p>
+<h1>התחברות</h1>
+
+<form [formGroup]="loginForm">
+    <div class="field">
+        <label><i class="fa fa-user"></i> שם משתמש:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="userName">
+    </div>
+
+    <div class="field">
+        <label><i class="fa fa-asterisk"></i> סיסמה:</label>
+        <input class="w3-input w3-border w3-round" type="password" formControlName="password">
+    </div>
+
+    <div *ngIf="errorMessage" class="w3-container w3-red">{{ errorMessage }}</div>
+
+    <button class="w3-btn w3-green w3-round w3-block" [disabled]="!loginForm.valid" (click)="login()">התחברות <i class="fa fa-check"></i></button>
+</form>
