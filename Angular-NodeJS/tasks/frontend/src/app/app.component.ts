@@ -11,7 +11,18 @@ import { UtilityService } from './utility.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'frontend';
+    title = 'ניהול משימות';
+
+    logout() {
+        const sub = this.http.get("logout").pipe(finalize(() => {
+            if (sub?.unsubscribe) {
+                sub.unsubscribe();
+            }
+        })).subscribe(() => {
+            this.utility.setUser();
+            this.router.navigate(['login']);
+        });
+    }
 
     constructor(public utility: UtilityService, private http: HttpService, private router: Router) { }
 

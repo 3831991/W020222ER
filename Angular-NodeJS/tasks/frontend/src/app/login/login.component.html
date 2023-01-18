@@ -14,4 +14,8 @@
     <div *ngIf="errorMessage" class="w3-container w3-red">{{ errorMessage }}</div>
 
     <button class="w3-btn w3-green w3-round w3-block" [disabled]="!loginForm.valid" (click)="login()">התחברות <i class="fa fa-check"></i></button>
+
+    <p>
+        <a routerLink="/signup">ליצירת חשבון חדש</a>
+    </p>
 </form>

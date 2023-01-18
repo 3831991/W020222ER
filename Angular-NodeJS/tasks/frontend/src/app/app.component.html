@@ -1,5 +1,16 @@
 <div *ngIf="utility.getUser()">
-    {{ utility.getUser()?.fullName }} ברוך הבא!
+    <p class="welcome">
+        {{ utility.getUser()?.fullName }} ברוך הבא!
+        <button class="w3-btn w3-white w3-round" (click)="logout()"><i class="fa fa-sign-out"></i> התנתק</button>
+    </p>
+    <h1>{{ title }}</h1>
+
+    <div id="frame">
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+    </div>
 </div>
 
-<router-outlet></router-outlet>
+<div *ngIf="!utility.getUser()">
+    <router-outlet></router-outlet>
+</div>

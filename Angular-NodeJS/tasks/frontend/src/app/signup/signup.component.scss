@@ -1,7 +1,3 @@
-h1 {
-    text-align: center;
-}
-
 form {
     max-width: 400px;
     background: #ffffffcc;
@@ -12,5 +8,21 @@ form {
 
     .field {
         margin-bottom: 12px;
+    }
+
+    p {
+        margin: 20px 0 0 0;
+        text-align: center;
+        color: #2a0fc8;
+    
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+            &:hover {
+                text-decoration: underline;
+                scale: 1.1;
+            }
+        }
     }
 }

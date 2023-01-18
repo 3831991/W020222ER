@@ -1,0 +1,22 @@
+.welcome {
+    color: white;
+    margin-bottom: -16px;
+    margin-right: 16px;
+
+    button {
+        padding: 2px 6px;
+        margin-right: 5px;
+        font-size: 12px;
+    }
+}
+
+#frame {
+    min-height: 500px;
+    background-color: white;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #0000006b;
+    padding-bottom: 200px;
+}

@@ -1,0 +1,5 @@
+<nav>
+    <a *ngFor="let item of menu" [routerLink]="item.route" [class.navActive]="active == item.route">
+        <i class="fa fa-{{ item.icon }}"></i> {{ item.title }}
+    </a>
+</nav>
