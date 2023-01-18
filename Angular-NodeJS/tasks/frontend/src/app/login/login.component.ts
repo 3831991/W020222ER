@@ -45,4 +45,10 @@ export class LoginComponent {
     }
 
     constructor(private http: HttpService, private utility: UtilityService, private router: Router) { }
+
+    ngOnInit() {
+        if (this.utility.getUser()) {
+            this.router.navigate(['']);
+        }
+    }
 }
