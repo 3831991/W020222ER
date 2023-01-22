@@ -1,0 +1,73 @@
+.frame {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.column {
+    padding: 20px;
+}
+
+.cards {
+    min-height: 300px;
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 #00000045;
+}
+
+.card {
+    background-color: #ffffffd1;
+    margin-bottom: 8px;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 #00000045;
+    position: relative;
+}
+
+.card i.fa-remove {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    color: red;
+    cursor: pointer;
+}
+
+.card p {
+    margin: 0px;
+    font-size: 18px;
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+.card button {
+    padding: 8px;
+    border: 0;
+    border-radius: 5px;
+    margin: 2px 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.drag {
+    border: 5px dashed gray;
+}
+
+.card:active {
+    opacity: 0.4;
+    cursor: grab;
+}
+
+[draggable] {
+    user-select: none;
+}
+
+input {
+    padding: 8px 12px;
+    margin: 30px auto;
+    margin-bottom: -20px;
+    border-radius: 5px;
+    border: 1px solid;
+    width: 80%;
+    display: block;
+    position: relative;
+}
