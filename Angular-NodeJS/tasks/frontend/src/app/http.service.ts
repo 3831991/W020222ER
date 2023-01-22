@@ -21,7 +21,7 @@ export class HttpService {
     }
 
     delete<T>(path: string) {
-        return this.httpClient.get<T>(`${this.url}/${path}`, this.options);
+        return this.httpClient.delete<T>(`${this.url}/${path}`, this.options);
     }
 
     constructor(private httpClient: HttpClient) {

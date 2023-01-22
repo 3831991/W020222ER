@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 import { LevelTypes, Structure, Task, TaskStatuses } from './tasks.interface';
 
 @Component({
@@ -53,7 +53,7 @@ export class TasksComponent implements OnInit {
     ];
 
     private statusChange(s: Structure, item: Task, newStatus: TaskStatuses) {
-        const sub = this.http.put<void>(`http://localhost:3000/tasks/${item.id}/status/${newStatus}`, {}).subscribe(() => {
+        const sub = this.http.put<void>(`tasks/${item.id}/status/${newStatus}`, {}).subscribe(() => {
             // מחקנו מהמערך הנוכחי את הפנייה (היות והיא צריכה לעבוד לכרטיסיה אחרת)
             const i = s.cards.findIndex(x => x.id == item.id);
             s.cards.splice(i, 1);
@@ -102,7 +102,7 @@ export class TasksComponent implements OnInit {
     }
 
     addTask() {
-        const sub = this.http.post<Task>("http://localhost:3000/tasks", { task: this.newTask }).subscribe(data => {
+        const sub = this.http.post<Task>("tasks", { task: this.newTask }).subscribe(data => {
             this.sections.find(x => x.status == TaskStatuses.open)?.cards.push(data);
             this.newTask = '';
             sub.unsubscribe();
@@ -110,7 +110,7 @@ export class TasksComponent implements OnInit {
     }
 
     remove(s: Structure, item: Task) {
-        const sub = this.http.delete<void>(`http://localhost:3000/tasks/${item.id}`).subscribe(() => {
+        const sub = this.http.delete<void>(`tasks/${item.id}`).subscribe(() => {
             const i = s.cards.findIndex(x => x.id == item.id);
             s.cards.splice(i, 1);
 
@@ -118,10 +118,10 @@ export class TasksComponent implements OnInit {
         });
     }
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpService) { }
 
     ngOnInit() {
-        const sub = this.http.get<Task[]>("http://localhost:3000/tasks").subscribe(data => {
+        const sub = this.http.get<Task[]>("tasks").subscribe(data => {
             data.forEach(task => {
                 const item = this.sections.find(s => s.status == task.status);
 
