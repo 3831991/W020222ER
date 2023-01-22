@@ -5,7 +5,7 @@ import { LevelTypes, Structure, Task, TaskStatuses } from './tasks.interface';
 @Component({
     selector: 'app-tasks',
     templateUrl: './tasks.component.html',
-    styleUrls: ['./tasks.component.css']
+    styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
     // הכנסנו את זה למשנה בתוך הקלאס ע"מ שנוכל להשתמש בו ב-HTML
@@ -64,6 +64,12 @@ export class TasksComponent implements OnInit {
             item.status = newStatus;
             struc?.cards.push(item);
 
+            sub.unsubscribe();
+        });
+    }
+
+    levelChange(item: Task) {
+        const sub = this.http.put<void>(`tasks/${item.id}/level/${item.level}`, {}).subscribe(() => {
             sub.unsubscribe();
         });
     }

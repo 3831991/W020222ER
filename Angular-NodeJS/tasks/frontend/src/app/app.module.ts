@@ -13,6 +13,7 @@ import { HttpService } from './http.service';
 import { UtilityService } from './utility.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { TasksRecycleBinComponent } from './tasks/tasks-recycle-bin/tasks-recycle-bin.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
         LoginComponent,
         SignupComponent,
         NavbarComponent,
-        HomeComponent
+        HomeComponent,
+        TasksRecycleBinComponent
     ],
     imports: [
         BrowserModule,

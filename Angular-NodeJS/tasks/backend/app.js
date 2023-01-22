@@ -3,7 +3,7 @@ import cors from 'cors';
 import './sqlConnect';
 import { signup } from './services/signup';
 import { getLoginStatus, login, logout } from './services/login';
-import { addTask, changeTaskStatus, getTasks, removeTask } from './services/tasks';
+import { addTask, changeTaskLevel, changeTaskStatus, getTasks, removeTask } from './services/tasks';
 const session = require('express-session');
 
 const app = express();
@@ -47,4 +47,5 @@ app.post('/login', login);
 app.get('/tasks', getTasks);
 app.post('/tasks', addTask);
 app.put('/tasks/:taskId/status/:newStatus', changeTaskStatus);
+app.put('/tasks/:taskId/level/:newLevel', changeTaskLevel);
 app.delete('/tasks/:id', removeTask);

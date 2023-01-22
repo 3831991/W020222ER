@@ -1,0 +1,24 @@
+<div class="frame">
+    <h2 class="w3-blue">סל מחזור <i class="fa fa-trash"></i></h2>
+
+    <table class="w3-table w3-striped w3-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>זמן</th>
+                <th>תוכן</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.createTime | date : 'dd/MM/yy' }}</td>
+                <td>{{ item.task }}</td>
+                <td>
+                    <button class="w3-btn w3-green w3-round"><i class="fa fa-undo"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

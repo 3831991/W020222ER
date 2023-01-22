@@ -1,7 +1,13 @@
 import { con } from "../sqlConnect";
 
 export function getTasks(req, res) {
-    con.query("SELECT * FROM `tasks` WHERE `isDeleted` = 0", (err, result) => {
+    let isDeleted = 0;
+
+    if (req.query.deleted) {
+        isDeleted = 1;
+    }
+
+    con.query("SELECT * FROM `tasks` WHERE `isDeleted` = ?", [isDeleted], (err, result) => {
         if (err) {
             console.log(err);
         }
@@ -28,6 +34,16 @@ export function addTask(req, res) {
 
 export function changeTaskStatus(req, res) {
     con.query("UPDATE `tasks` SET `status` = ? WHERE `id` = ?", [req.params.newStatus, req.params.taskId], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+
+        res.send();
+    });
+}
+
+export function changeTaskLevel(req, res) {
+    con.query("UPDATE `tasks` SET `level` = ? WHERE `id` = ?", [req.params.newLevel, req.params.taskId], (err, result) => {
         if (err) {
             console.log(err);
         }

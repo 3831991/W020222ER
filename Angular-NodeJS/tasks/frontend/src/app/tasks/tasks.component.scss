@@ -1,0 +1,83 @@
+.inputFrame {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    input {
+        padding: 8px 12px;
+        border-radius: 5px;
+        border: 1px solid;
+        width: 80%;
+        display: block;
+        position: relative;
+    }
+
+    * {
+        margin: 0 3px;
+    }
+}
+
+.frame {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+
+    .column {
+        padding: 20px;
+
+        .cards {
+            min-height: 300px;
+            padding: 16px;
+            border-radius: 5px;
+            box-shadow: 0 0 6px 0 #00000045;
+
+            .card {
+                background-color: #ffffffd1;
+                margin-bottom: 8px;
+                padding: 12px;
+                border-radius: 5px;
+                box-shadow: 0 0 6px 0 #00000045;
+                position: relative;
+                border-right: 4px solid;
+
+                &:active {
+                    opacity: 0.4;
+                    cursor: grab;
+                }
+
+                i.fa-remove {
+                    position: absolute;
+                    left: 8px;
+                    top: 8px;
+                    color: red;
+                    cursor: pointer;
+                }
+
+                p {
+                    margin: 0px;
+                    font-size: 18px;
+                    text-align: right;
+                    margin-bottom: 8px;
+                }
+
+                button {
+                    padding: 8px;
+                    border: 0;
+                    border-radius: 5px;
+                    margin: 2px 5px;
+                    cursor: pointer;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.drag {
+    border: 5px dashed gray;
+}
+
+[draggable] {
+    user-select: none;
+}
+
