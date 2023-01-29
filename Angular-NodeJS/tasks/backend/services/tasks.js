@@ -52,6 +52,16 @@ export function changeTaskLevel(req, res) {
     });
 }
 
+export function restoreTask(req, res) {
+    con.query("UPDATE `tasks` SET `isDeleted` = 0 WHERE `id` = ?", [req.params.id], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+
+        res.send();
+    });
+}
+
 export function removeTask(req, res) {
     con.query("UPDATE `tasks` SET `isDeleted` = 1 WHERE `id` = ?", [req.params.id], (err, result) => {
         if (err) {

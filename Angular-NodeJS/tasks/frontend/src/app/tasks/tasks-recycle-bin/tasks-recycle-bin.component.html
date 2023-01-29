@@ -16,7 +16,7 @@
                 <td>{{ item.createTime | date : 'dd/MM/yy' }}</td>
                 <td>{{ item.task }}</td>
                 <td>
-                    <button class="w3-btn w3-green w3-round"><i class="fa fa-undo"></i></button>
+                    <button class="w3-btn w3-green w3-round" (click)="restore(item)"><i class="fa fa-undo"></i></button>
                 </td>
             </tr>
         </tbody>

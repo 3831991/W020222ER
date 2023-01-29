@@ -17,19 +17,19 @@ export class TasksComponent implements OnInit {
         {
             status: TaskStatuses.open,
             title: 'משימות פתוחות',
-            color: 'yellow',
+            color: '#e8e885',
             cards: [],
         },
         {
             status: TaskStatuses.inProgress,
             title: 'בטיפול',
-            color: 'orange',
+            color: '#e8c885',
             cards: [],
         },
         {
             status: TaskStatuses.complete,
             title: 'טופלו',
-            color: 'green',
+            color: '#85e894',
             cards: [],
         },
     ];
@@ -38,17 +38,17 @@ export class TasksComponent implements OnInit {
         {
             level: LevelTypes.low,
             title: 'נמוכה',
-            color: 'green',
+            color: '#cddc39',
         },
         {
             level: LevelTypes.medium,
             title: 'בינונית',
-            color: 'yellow',
+            color: '#ff9800',
         },
         {
             level: LevelTypes.high,
             title: 'גבוהה',
-            color: 'red',
+            color: '#a02424',
         },
     ];
 
@@ -66,6 +66,16 @@ export class TasksComponent implements OnInit {
 
             sub.unsubscribe();
         });
+    }
+    
+    isDuplicate() {
+        const cards = [
+            ...this.sections[TaskStatuses.open].cards,
+            ...this.sections[TaskStatuses.inProgress].cards,
+        ];
+        const item = cards.find(x => x.task == this.newTask);
+
+        return Boolean(item);
     }
 
     levelChange(item: Task) {
@@ -108,6 +118,11 @@ export class TasksComponent implements OnInit {
     }
 
     addTask() {
+        if (this.isDuplicate()) {
+            alert("יש כבר משימה כזאת");
+            return;
+        }
+
         const sub = this.http.post<Task>("tasks", { task: this.newTask }).subscribe(data => {
             this.sections.find(x => x.status == TaskStatuses.open)?.cards.push(data);
             this.newTask = '';
