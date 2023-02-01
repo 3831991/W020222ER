@@ -16,6 +16,20 @@ export function getTasks(req, res) {
     });
 }
 
+export function getTask(req, res) {
+    con.query("SELECT * FROM `tasks` WHERE `id` = ? AND `userId` = ?", [req.params.id, req.session.user.id], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+
+        if (result.length) {
+            res.send(result[0]);
+        } else {
+            res.send();
+        }
+    });
+}
+
 export function addTask(req, res) {
     con.query("INSERT INTO `tasks`(`task`, `status`, `userId`) VALUES (?, 0, ?)", [req.body.task, req.session.user.id], (err, result) => {
         if (err) {

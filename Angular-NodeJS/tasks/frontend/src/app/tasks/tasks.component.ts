@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpService } from '../http.service';
-import { LevelTypes, Structure, Task, TaskStatuses } from './tasks.interface';
+import { Structure, Task, TaskStatuses, urlevels } from './tasks.interface';
 
 @Component({
     selector: 'app-tasks',
@@ -12,6 +13,7 @@ export class TasksComponent implements OnInit {
     // לא חובה להשתמש באותו שם - אך ככה מקובל
     TaskStatuses = TaskStatuses;
     newTask?: string;
+    urlevels = urlevels;
 
     sections: Structure[] = [
         {
@@ -31,24 +33,6 @@ export class TasksComponent implements OnInit {
             title: 'טופלו',
             color: '#85e894',
             cards: [],
-        },
-    ];
-
-    urlevels = [
-        {
-            level: LevelTypes.low,
-            title: 'נמוכה',
-            color: '#cddc39',
-        },
-        {
-            level: LevelTypes.medium,
-            title: 'בינונית',
-            color: '#ff9800',
-        },
-        {
-            level: LevelTypes.high,
-            title: 'גבוהה',
-            color: '#a02424',
         },
     ];
 
@@ -139,7 +123,11 @@ export class TasksComponent implements OnInit {
         });
     }
 
-    constructor(private http: HttpService) { }
+    navigateTask(item: Task) {
+        this.router.navigate(['task', item.id]);
+    }
+
+    constructor(private http: HttpService, private router: Router) { }
 
     ngOnInit() {
         const sub = this.http.get<Task[]>("tasks").subscribe(data => {

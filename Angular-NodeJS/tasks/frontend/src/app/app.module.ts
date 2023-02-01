@@ -14,6 +14,7 @@ import { UtilityService } from './utility.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { TasksRecycleBinComponent } from './tasks/tasks-recycle-bin/tasks-recycle-bin.component';
+import { TaskEditComponent } from './tasks/task-edit/task-edit.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { TasksRecycleBinComponent } from './tasks/tasks-recycle-bin/tasks-recycl
         SignupComponent,
         NavbarComponent,
         HomeComponent,
-        TasksRecycleBinComponent
+        TasksRecycleBinComponent,
+        TaskEditComponent
     ],
     imports: [
         BrowserModule,

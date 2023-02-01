@@ -1,0 +1,24 @@
+<h2>עריכת משימה</h2>
+
+<form *ngIf="form" [formGroup]="form">
+    <div class="field">
+        <label>משימה:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="task">
+    </div>
+
+    <div class="field">
+        <label>סטטוס:</label>
+        <select class="w3-select w3-border w3-round" formControlName="status">
+            <option *ngFor="let s of statuses" value="{{ s.status }}">{{ s.title }}</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label>רמת עדיפות:</label>
+        <select class="w3-select w3-border w3-round" formControlName="level">
+            <option *ngFor="let l of urlevels" value="{{ l.level }}" [style.background-color]="l.color">{{ l.title }}</option>
+        </select>
+    </div>
+
+    <button class="w3-btn w3-green w3-round w3-block" [disabled]="!form.valid" (click)="save()">שמירה <i class="fa fa-save"></i></button>
+</form>
