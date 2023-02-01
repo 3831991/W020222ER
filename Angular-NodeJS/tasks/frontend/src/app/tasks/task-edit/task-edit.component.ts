@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/http.service';
 import { Task, TaskStatuses, urlevels } from '../tasks.interface';
@@ -37,7 +37,10 @@ export class TaskEditComponent {
     }
 
     save() {
-
+        const sub = this.http.put<void>(`tasks/${this.task?.id}`, this.form?.value).subscribe(() => {
+            this.router.navigate(['tasks']);
+            sub.unsubscribe();
+        });
     }
 
     getTask(id: string) {
@@ -48,7 +51,7 @@ export class TaskEditComponent {
         });
     }
 
-    constructor(private route: ActivatedRoute, private http: HttpService) {
+    constructor(private router: Router, private route: ActivatedRoute, private http: HttpService) {
 
         this.sub = this.route.params.subscribe(params => {
             this.getTask(params['id']);

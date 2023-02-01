@@ -46,6 +46,16 @@ export function addTask(req, res) {
     });
 }
 
+export function updateTask(req, res) {
+    con.query("UPDATE `tasks` SET `task` = ?, `status` = ?, `level` = ? WHERE `id` = ? AND `userId` = ?", [req.body.task, req.body.status, req.body.level, req.params.id, req.session.user.id], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+
+        res.send();
+    });
+}
+
 export function changeTaskStatus(req, res) {
     con.query("UPDATE `tasks` SET `status` = ? WHERE `id` = ? AND `userId` = ?", [req.params.newStatus, req.params.taskId, req.session.user.id], (err, result) => {
         if (err) {
