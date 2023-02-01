@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { ErrorPageComponent } from "./error-page/error-page.component";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
@@ -13,4 +14,5 @@ export const routes: Routes = [
     { path: 'tasks', component: TasksComponent },
     { path: 'task/:id', component: TaskEditComponent },
     { path: 'tasks-recycle-bin', component: TasksRecycleBinComponent },
+    { path: '**', component: ErrorPageComponent },
 ];

@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { TasksRecycleBinComponent } from './tasks/tasks-recycle-bin/tasks-recycle-bin.component';
 import { TaskEditComponent } from './tasks/task-edit/task-edit.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { TaskEditComponent } from './tasks/task-edit/task-edit.component';
         NavbarComponent,
         HomeComponent,
         TasksRecycleBinComponent,
-        TaskEditComponent
+        TaskEditComponent,
+        ErrorPageComponent
     ],
     imports: [
         BrowserModule,
