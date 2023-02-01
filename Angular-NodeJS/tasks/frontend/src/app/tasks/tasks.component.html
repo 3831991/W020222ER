@@ -3,7 +3,19 @@
     <button class="w3-btn w3-blue w3-round" routerLink="/tasks-recycle-bin">סל מחזור <i class="fa fa-trash"></i></button>
 </div>
 
-<div class="frame">
+<div class="displayMode">
+    <label>
+        <input [(ngModel)]="displayMode" class="w3-radio" type="radio" name="displayMode" value="columns"> עמודות
+    </label>
+    <label>
+        <input [(ngModel)]="displayMode" class="w3-radio" type="radio" name="displayMode" value="table"> טבלה
+    </label>
+    <label>
+        <input [(ngModel)]="displayMode" class="w3-radio" type="radio" name="displayMode" value="folders"> תיקיות
+    </label>
+</div>
+
+<div class="frame" *ngIf="displayMode == 'columns'">
     <div *ngFor="let s of sections">
         <h2>{{ s.title }}</h2>
 
@@ -24,4 +36,12 @@
             </div>
         </div>
     </div>
+</div>
+
+<div *ngIf="displayMode == 'table'">
+
+</div>
+
+<div *ngIf="displayMode == 'folders'">
+
 </div>

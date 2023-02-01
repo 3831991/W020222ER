@@ -14,6 +14,7 @@ export class TasksComponent implements OnInit {
     TaskStatuses = TaskStatuses;
     newTask?: string;
     urlevels = urlevels;
+    displayMode: 'columns' | 'table' | 'list' | 'folders' = 'columns';
 
     sections: Structure[] = [
         {
