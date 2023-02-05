@@ -1,5 +1,17 @@
-<nav>
+<nav class="navbar">
+    <div class="container" [class.open]="isOpen" (click)="isOpen = !isOpen">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
     <a *ngFor="let item of menu" [routerLink]="item.route" [class.navActive]="active == item.route">
+        <i class="fa fa-{{ item.icon }}"></i> {{ item.title }}
+    </a>
+</nav>
+
+<nav class="sidebar" [class.open]="isOpen">
+    <a *ngFor="let item of sidebar" [routerLink]="item.route" [class.navActive]="active == item.route">
         <i class="fa fa-{{ item.icon }}"></i> {{ item.title }}
     </a>
 </nav>
