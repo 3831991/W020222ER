@@ -13,17 +13,16 @@ export class NavbarComponent implements OnInit {
 
     menu: Nav[] = [
         { route: '/', title: 'בית', icon: 'home' },
-        { route: '/tasks', title: 'משימות', icon: 'check-square-o' },
+        { route: '/tasks', title: 'משימות', icon: 'tasks' },
     ];
 
     sidebar: Nav[] = [
         ...this.menu,
-        { route: '/', title: 'ירקות', icon: 'home' },
-        { route: '/', title: 'פירות', icon: 'home' },
-        { route: '/', title: 'קטניות', icon: 'home' },
-        { route: '/', title: 'ירוקים', icon: 'home' },
-        { route: '/', title: 'פירות יבשים', icon: 'home' },
-    ]
+        { route: '/vegetables', title: 'ירקות', icon: 'carrot' },
+        { route: '/fruits', title: 'פירות', icon: 'apple-alt' },
+        { route: '/legumes', title: 'קטניות', icon: 'seedling' },
+        { route: '/greens', title: 'ירוקים', icon: 'leaf' },
+    ];
 
     constructor(router: Router) {
 
