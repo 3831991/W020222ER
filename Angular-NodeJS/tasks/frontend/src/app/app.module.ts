@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { TasksRecycleBinComponent } from './tasks/tasks-recycle-bin/tasks-recycle-bin.component';
 import { TaskEditComponent } from './tasks/task-edit/task-edit.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { MarketComponent } from './market/market.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
         HomeComponent,
         TasksRecycleBinComponent,
         TaskEditComponent,
-        ErrorPageComponent
+        ErrorPageComponent,
+        MarketComponent
     ],
     imports: [
         BrowserModule,

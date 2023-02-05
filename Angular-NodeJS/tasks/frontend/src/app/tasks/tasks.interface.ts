@@ -4,6 +4,7 @@ export interface Task {
     task: string;
     status: TaskStatuses;
     level: LevelTypes;
+    remark: string;
     isDeleted: boolean;
 }
 

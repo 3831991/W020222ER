@@ -21,7 +21,7 @@
 
         <div class="column" (dragover)="dragover(s)" [class.drag]="s.isDrag">
             <div class="cards" [style.background-color]="s.color">
-                <div *ngFor="let item of s.cards" class="card" (dragend)="dragend(s, item)" draggable="true" [style.border-color]="urlevels[item.level].color" (dblclick)="navigateTask(item)">
+                <div *ngFor="let item of s.cards" class="card" (dragend)="dragend(s, item)" draggable="true" [style.border-color]="urlevels[item.level].color" (dblclick)="navigateTask(item)" [attr.title]="item.remark">
                     <i class="fa fa-remove" (click)="remove(s, item)"></i>
                     <p>{{ item.task }}</p>
 

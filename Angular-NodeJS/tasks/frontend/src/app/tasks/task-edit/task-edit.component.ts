@@ -33,6 +33,9 @@ export class TaskEditComponent {
             level: new FormControl(item?.level, [
                 Validators.required,
             ]),
+            remark: new FormControl(item?.remark, [
+                Validators.required,
+            ]),
         });
     }
 

@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { ErrorPageComponent } from "./error-page/error-page.component";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
+import { MarketComponent } from "./market/market.component";
 import { SignupComponent } from "./signup/signup.component";
 import { TaskEditComponent } from "./tasks/task-edit/task-edit.component";
 import { TasksRecycleBinComponent } from "./tasks/tasks-recycle-bin/tasks-recycle-bin.component";
@@ -14,5 +15,6 @@ export const routes: Routes = [
     { path: 'tasks', component: TasksComponent },
     { path: 'task/:id', component: TaskEditComponent },
     { path: 'tasks-recycle-bin', component: TasksRecycleBinComponent },
+    { path: 'market/:category', component: MarketComponent },
     { path: '**', component: ErrorPageComponent },
 ];

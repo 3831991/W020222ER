@@ -20,5 +20,10 @@
         </select>
     </div>
 
+    <div class="field">
+        <label>הערה:</label>
+        <textarea class="w3-input w3-border w3-round" type="text" formControlName="remark"></textarea>
+    </div>
+
     <button class="w3-btn w3-green w3-round w3-block" [disabled]="!form.valid" (click)="save()">שמירה <i class="fa fa-save"></i></button>
 </form>

@@ -18,10 +18,10 @@ export class NavbarComponent implements OnInit {
 
     sidebar: Nav[] = [
         ...this.menu,
-        { route: '/vegetables', title: 'ירקות', icon: 'carrot' },
-        { route: '/fruits', title: 'פירות', icon: 'apple-alt' },
-        { route: '/legumes', title: 'קטניות', icon: 'seedling' },
-        { route: '/greens', title: 'ירוקים', icon: 'leaf' },
+        { route: '/market/vegetables', title: 'ירקות', icon: 'carrot' },
+        { route: '/market/fruits', title: 'פירות', icon: 'apple-alt' },
+        { route: '/market/legumes', title: 'קטניות', icon: 'seedling' },
+        { route: '/market/greens', title: 'ירוקים', icon: 'leaf' },
     ];
 
     constructor(router: Router) {
