@@ -16,6 +16,16 @@ export function getTasks(req, res) {
     });
 }
 
+export function getCounterTasks(req, res) {
+    con.query("SELECT `status`, COUNT(`id`) AS 'count' FROM `tasks` WHERE `userId` = ? AND `isDeleted` = 0 GROUP BY `status`", [req.session.user.id], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+
+        res.send(result);
+    });
+}
+
 export function getTask(req, res) {
     con.query("SELECT * FROM `tasks` WHERE `id` = ? AND `userId` = ?", [req.params.id, req.session.user.id], (err, result) => {
         if (err) {

@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
         router.events.subscribe(ev => {
             if (ev instanceof NavigationStart) {
                 this.active = ev.url;
+                this.isOpen = false;
             }
         });
 

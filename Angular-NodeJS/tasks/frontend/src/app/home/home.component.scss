@@ -1,0 +1,21 @@
+.w3-row {
+    padding: 0 12px;
+
+    .w3-third {
+        padding: 8px;
+        float: right;
+
+        .w3-card {
+            padding: 4px 12px;
+
+            h4, p {
+                margin: 0;
+                text-align: center;
+            }
+
+            p {
+                font-size: 4em;
+            }
+        }
+    }
+}

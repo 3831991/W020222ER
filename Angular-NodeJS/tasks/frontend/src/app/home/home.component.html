@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div class="w3-row">
+    <div class="w3-third" *ngFor="let s of statuses">
+        <div class="w3-card w3-round" [style.background-color]="s.color">
+            <h4>משימות {{ s.title }}</h4>
+            <p class="count">{{ s.count }}</p>
+        </div>
+    </div>
+</div>
