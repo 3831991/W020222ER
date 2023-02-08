@@ -1,0 +1,22 @@
+<h2 *ngIf="!product">הוספת מוצר</h2>
+<h2 *ngIf="product">עריכת מוצר</h2>
+
+<form *ngIf="form" [formGroup]="form">
+    <div class="field">
+        <label>שם המוצר:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="name">
+    </div>
+
+    <div class="field">
+        <label>מחיר:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="price">
+    </div>
+
+    <div class="field">
+        <label>הנחה:</label>
+        <input class="w3-input w3-border w3-round" type="text" formControlName="discount">
+    </div>
+
+    <button *ngIf="!product" class="w3-btn w3-green w3-round w3-block" [disabled]="!form.valid" (click)="add()">הוסף <i class="fa fa-plus"></i></button>
+    <button *ngIf="product" class="w3-btn w3-green w3-round w3-block" [disabled]="!form.valid" (click)="save()">שמירה <i class="fa fa-save"></i></button>
+</form>

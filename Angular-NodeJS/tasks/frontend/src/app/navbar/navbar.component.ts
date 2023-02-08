@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
     menu: Nav[] = [
         { route: '/', title: 'בית', icon: 'home' },
         { route: '/tasks', title: 'משימות', icon: 'tasks' },
+        { route: '/market/products/manage', title: 'ניהול מוצרים', icon: 'edit' },
     ];
 
     sidebar: Nav[] = [
