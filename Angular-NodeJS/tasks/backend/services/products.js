@@ -47,7 +47,7 @@ export function addProduct(req, res) {
 }
 
 export function updateProduct(req, res) {
-    con.query("UPDATE `products` SET `name` = ?, `price` = ?, `discount` = ? WHERE `id` = ?", [req.body.name, req.body.price, req.body.discount], (err, result) => {
+    con.query("UPDATE `products` SET `name` = ?, `price` = ?, `discount` = ? WHERE `id` = ?", [req.body.name, req.body.price, req.body.discount, req.params.id], (err, result) => {
         if (err) {
             console.log(err);
         }
