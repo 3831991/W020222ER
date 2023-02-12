@@ -7,16 +7,20 @@
                 <th>#</th>
                 <th>מוצר</th>
                 <th>כמות</th>
+                <th>עלות</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of data; let i = index">
                 <td>{{ i + 1 }}</td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.amount }}</td>
+                <td>{{ item.name }} ({{ item.price - item.discount }} ש"ח)</td>
+                <td><input type="number" [(ngModel)]="item.amount" class="w3-input w3-border w3-round" (input)="changeAmount()"></td>
+                <td>{{ item.amount * (item.price - item.discount) }} ש"ח</td>
                 <td></td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<p class="sum" *ngIf="sum">עלות: {{ sum | number }} ש"ח</p>
