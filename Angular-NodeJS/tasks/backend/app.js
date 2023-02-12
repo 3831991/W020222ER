@@ -4,7 +4,7 @@ import './sqlConnect';
 import { signup } from './services/signup';
 import { getLoginStatus, login, logout } from './services/login';
 import { addTask, changeTaskLevel, changeTaskStatus, getCounterTasks, getTask, getTasks, removeTask, restoreTask, updateTask } from './services/tasks';
-import { addProduct, getProduct, getProducts, removeProduct, restoreProduct, updateProduct } from './services/products';
+import { addProduct, getCartProducts, getProduct, getProducts, removeProduct, restoreProduct, updateProduct } from './services/products';
 const session = require('express-session');
 
 const app = express();
@@ -79,6 +79,7 @@ app.put('/tasks/restore/:id', authGurd, restoreTask);
 app.delete('/tasks/:id', authGurd, removeTask);
 
 app.get('/products', authGurd, getProducts);
+app.post('/products/cart', authGurd, getCartProducts);
 app.get('/product/:id', authGurd, getProduct);
 app.post('/products', authGurd, addProduct);
 app.put('/products/:id', authGurd, updateProduct);

@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<h2 class="w3-center w3-text-indigo">סל קניות</h2>
+
+<div class="w3-container">
+    <table class="w3-table w3-bordered">
+        <thead>
+            <tr class="w3-indigo">
+                <th>#</th>
+                <th>מוצר</th>
+                <th>כמות</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.amount }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

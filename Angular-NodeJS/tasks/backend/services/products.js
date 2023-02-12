@@ -16,6 +16,16 @@ export function getProducts(req, res) {
     });
 }
 
+export function getCartProducts(req, res) {
+    con.query("SELECT * FROM `products` WHERE `isDeleted` = 0 AND `id` IN (?)", [req.body.cart], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+
+        res.send(result);
+    });
+}
+
 export function getProduct(req, res) {
     con.query("SELECT * FROM `products` WHERE `id` = ?", [req.params.id], (err, result) => {
         if (err) {

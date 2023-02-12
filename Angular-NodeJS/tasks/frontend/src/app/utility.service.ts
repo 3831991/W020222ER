@@ -16,19 +16,23 @@ export class UtilityService {
         return this.user;
     }
 
-    addToCart(productId: number) {
+    addToCart(productId?: number) {
         let cart = [];
 
         if (localStorage.getItem('cart')) {
             cart = JSON.parse(localStorage.getItem('cart') as any);
         }
 
-        cart.push(productId);
+        if (productId) {
+            cart.push(productId);
+        }
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
         this.cartAmount = cart.length;
     }
 
-    constructor() { }
+    constructor() {
+        this.addToCart();
+    }
 }
