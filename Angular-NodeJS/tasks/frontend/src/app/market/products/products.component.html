@@ -5,9 +5,9 @@
             <h5 *ngIf="item.discount"><small style="text-decoration: line-through;">{{ item.price }} ש"ח</small></h5>
             <h5 *ngIf="!item.discount"><small>מחיר:</small></h5>
             <h5><b>{{ item.price - item.discount }} ש"ח</b></h5>
-        
+
             <div class="w3-section">
-                <button class="w3-btn w3-round w3-green">הוסף לסל <i class="fas fa-shopping-cart"></i></button>
+                <button class="w3-btn w3-round w3-green" (click)="add(item)">הוסף לסל <i class="fas fa-shopping-cart"></i></button>
             </div>
         </div>
     </div>
