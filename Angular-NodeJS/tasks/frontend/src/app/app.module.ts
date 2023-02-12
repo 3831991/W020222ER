@@ -19,6 +19,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { MarketComponent } from './market/market.component';
 import { ProductsManagmentComponent } from './market/products-managment/products-managment.component';
 import { ProductComponent } from './market/products-managment/product/product.component';
+import { ProductsComponent } from './market/products/products.component';
+import { CartComponent } from './market/cart/cart.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +35,9 @@ import { ProductComponent } from './market/products-managment/product/product.co
         ErrorPageComponent,
         MarketComponent,
         ProductsManagmentComponent,
-        ProductComponent
+        ProductComponent,
+        ProductsComponent,
+        CartComponent
     ],
     imports: [
         BrowserModule,

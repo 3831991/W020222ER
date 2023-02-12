@@ -14,15 +14,17 @@ export class NavbarComponent implements OnInit {
     menu: Nav[] = [
         { route: '/', title: 'בית', icon: 'home' },
         { route: '/tasks', title: 'משימות', icon: 'tasks' },
-        { route: '/market/products/manage', title: 'ניהול מוצרים', icon: 'edit' },
     ];
 
     sidebar: Nav[] = [
         ...this.menu,
-        { route: '/market/vegetables', title: 'ירקות', icon: 'carrot' },
-        { route: '/market/fruits', title: 'פירות', icon: 'apple-alt' },
-        { route: '/market/legumes', title: 'קטניות', icon: 'seedling' },
-        { route: '/market/greens', title: 'ירוקים', icon: 'leaf' },
+        { route: '/market/products/manage', title: 'ניהול מוצרים', icon: 'edit' },
+        { route: '/market/products', title: 'חנות', icon: 'store' },
+        { route: '/market/cart', title: 'עגלת קניות', icon: 'shopping-cart' },
+        // { route: '/market/vegetables', title: 'ירקות', icon: 'carrot' },
+        // { route: '/market/fruits', title: 'פירות', icon: 'apple-alt' },
+        // { route: '/market/legumes', title: 'קטניות', icon: 'seedling' },
+        // { route: '/market/greens', title: 'ירוקים', icon: 'leaf' },
     ];
 
     constructor(router: Router) {

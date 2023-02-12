@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { finalize } from 'rxjs';
 import { HttpService } from 'src/app/http.service';
-import { Product } from './products.interface';
+import { Product } from '../products-managment/products.interface';
 
 @Component({
-    selector: 'app-products-managment',
-    templateUrl: './products-managment.component.html',
-    styleUrls: ['./products-managment.component.scss']
+    selector: 'app-products',
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.scss']
 })
-export class ProductsManagmentComponent {
+export class ProductsComponent {
     data: Product[] = [];
 
     remove(item: Product) {
@@ -22,7 +22,7 @@ export class ProductsManagmentComponent {
         });
     }
 
-    constructor(private http: HttpService) {}
+    constructor(private http: HttpService) { }
 
     ngOnInit() {
         const sub = this.http.get<Product[]>("products").pipe(finalize(() => {

@@ -7,10 +7,12 @@
         <div class="w3-container w3-card w3-round w3-center">
             <h3>{{ item.name }}</h3>
             <h5>{{ item.price }} ש"ח</h5>
+            <h5><small>הנחה: {{ item.discount }} ש"ח</small></h5>
+            <h5><b>סה"כ: {{ item.price - item.discount }} ש"ח</b></h5>
         
             <div class="w3-section">
                 <button class="w3-btn w3-round w3-green" [routerLink]="['/', 'market', 'product', item.id]">עריכה</button>
-                <button class="w3-btn w3-round w3-red">מחיקה</button>
+                <button class="w3-btn w3-round w3-red" (click)="remove(item)">מחיקה</button>
             </div>
         </div>
     </div>
