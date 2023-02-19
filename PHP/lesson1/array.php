@@ -58,4 +58,12 @@
     // foreach ($colors as $i => $p) {
     //     echo "<p><b>$i: </b> $p</p>";
     // }
+
+    // $name = "שלום";
+
+    // echo "אהלן" . " אהלן $name <br>";
+
+    // echo "הגיל שלו הוא {$person['age']}";
+
+    echo var_dump($_SERVER['REMOTE_ADDR']);
 ?>
