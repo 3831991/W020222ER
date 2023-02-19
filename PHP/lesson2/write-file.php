@@ -1,23 +1,20 @@
 <?
-    require 'loger.php';
+    $arr = explode('/', $_SERVER['SCRIPT_FILENAME']);
+    $fileName = array_pop($arr);
 
-    if (isset($_FILES['myFile'])) {
-        $file = $_FILES['myFile'];
+    $d = date("d_m_Y");
+    $logFile = "files/log_$d.txt";
 
-        $allowed = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif'];
+    if (isset($_POST['str'])) {
+        $text = '';
 
-        if (!in_array($file['type'], $allowed)) {
-            echo "<h1 style='color: red'>ימעפן!! תנסה לפרוץ למישהו אחר</h1>";
-            die();
+        if (file_exists($logFile)) {
+            $text = file_get_contents($logFile);
         }
 
-        move_uploaded_file($file['tmp_name'], "images/" . $file['name']);
+        $text .= date("Y-m-d H:i:s") . ' - ' . $_POST['str'] . PHP_EOL;
 
-        echo "<h1>הקובץ עלה בהצלחה</h1>";
-
-        addLog("עלה קובץ [{$file['name']}]");
-
-        // name / type / tmp_name / error / size
+        file_put_contents($logFile, $text);
     }
 ?>
 
@@ -38,14 +35,14 @@
     <div class="container">
         <div class="card bg-light text-dark">
 
-            <h1>העלאת קובץ</h1>
+            <h1>כתיבה לקובץ</h1>
 
-            <form action="file-upload.php" method="POST" enctype="multipart/form-data">
+            <form action="<?= $fileName ?>" method="POST">
                 <div class="mb-3 mt-3">
-                    <input class="form-control" type="file" name="myFile" require accept="image/*">
+                    <input class="form-control" type="text" name="str" require autofocus>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="display: block; width: 100%">העלה</button>
+                <button type="submit" class="btn btn-primary" style="display: block; width: 100%">שלח</button>
             </form>
         </div>
     </div>
