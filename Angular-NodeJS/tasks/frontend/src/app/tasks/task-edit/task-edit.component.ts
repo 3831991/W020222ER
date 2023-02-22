@@ -15,6 +15,7 @@ export class TaskEditComponent {
     sub?: Subscription;
     urlevels = urlevels;
     form?: FormGroup;
+    isEditableState?: boolean;
 
     statuses = [
         { status: TaskStatuses.open, title: 'פתוח' },
@@ -40,10 +41,17 @@ export class TaskEditComponent {
     }
 
     save() {
-        const sub = this.http.put<void>(`tasks/${this.task?.id}`, this.form?.value).subscribe(() => {
-            this.router.navigate(['tasks']);
-            sub.unsubscribe();
-        });
+        if (this.isEditableState) {
+            const sub = this.http.put<void>(`tasks/${this.task?.id}`, this.form?.value).subscribe(() => {
+                this.router.navigate(['tasks']);
+                sub.unsubscribe();
+            });
+        } else {
+            const sub = this.http.post<Task>("tasks", this.form?.value).subscribe(data => {
+                this.router.navigate(['tasks']);
+                sub.unsubscribe();
+            });
+        }
     }
 
     getTask(id: string) {
@@ -57,7 +65,15 @@ export class TaskEditComponent {
     constructor(private router: Router, private route: ActivatedRoute, private http: HttpService) {
 
         this.sub = this.route.params.subscribe(params => {
-            this.getTask(params['id']);
+            const id = params['id'];
+
+            if (id == 'new') {
+                this.isEditableState = false;
+                this.buildForm();
+            } else {
+                this.isEditableState = true;
+                this.getTask(id);
+            }
         });
 
     }

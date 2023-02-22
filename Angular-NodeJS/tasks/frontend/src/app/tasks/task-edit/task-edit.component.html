@@ -1,4 +1,5 @@
-<h2>עריכת משימה</h2>
+<h2 *ngIf="isEditableState">עריכת משימה</h2>
+<h2 *ngIf="!isEditableState">הוספת משימה</h2>
 
 <form *ngIf="form" [formGroup]="form">
     <div class="field">
