@@ -5,6 +5,8 @@ import { finalize } from 'rxjs/operators';
 import { UserLogin } from './login.interface';
 import { UtilityService } from '../utility.service';
 import { Router } from '@angular/router';
+import { SocialAuthService } from "@abacritt/angularx-social-login";
+import { SocialUser } from "@abacritt/angularx-social-login";
 
 @Component({
     selector: 'app-login',
@@ -44,11 +46,19 @@ export class LoginComponent {
         });
     }
 
-    constructor(private http: HttpService, private utility: UtilityService, private router: Router) { }
+    constructor(private http: HttpService, private utility: UtilityService, private router: Router, private authService: SocialAuthService) { }
 
     ngOnInit() {
         if (this.utility.getUser()) {
             this.router.navigate(['']);
         }
+
+        this.authService.authState.subscribe((user) => {
+            // לשלוח לשרת
+            console.log(user);
+
+            // בשרת נבדוק באמצעות idToken + Client Secret
+            // לאחר שנקבל אישור נחבר את היוזר באמצעות המייל שלו וניצור לו סשיין
+        });
     }
 }

@@ -15,6 +15,8 @@
 
     <button class="w3-btn w3-green w3-round w3-block" [disabled]="!loginForm.valid" (click)="login()">התחברות <i class="fa fa-check"></i></button>
 
+    <asl-google-signin-button type='icon' size='medium' text="signin_with"></asl-google-signin-button>
+
     <p>
         <a routerLink="/signup">ליצירת חשבון חדש</a>
     </p>

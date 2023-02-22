@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
@@ -24,7 +25,9 @@ export class AppComponent {
         });
     }
 
-    constructor(public utility: UtilityService, private http: HttpService, private router: Router) { }
+    constructor(public utility: UtilityService, private http: HttpService, private router: Router, private datePipe: DatePipe) {
+        console.log(this.datePipe.transform(new Date(), "yyyy-MM-dd"));
+    }
 
     ngOnInit() {
         const sub = this.http.get<UserLogin>("login").pipe(finalize(() => {
