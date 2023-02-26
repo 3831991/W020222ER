@@ -1,6 +1,6 @@
-import { con } from '../sqlConnect';
+const con = require('../sqlConnect').con;
 
-export function signup(req, res) {
+exports.signup = function(req, res) {
     const sqlQuery = "INSERT INTO `users`(`createdTime`, `fullName`, `email`, `userName`, `password`) VALUES (CURRENT_TIME, ?, ?, ?, MD5(?))";
     const paramArr = [req.body.fullName, req.body.email, req.body.userName.trim(), req.body.password.trim()];
 

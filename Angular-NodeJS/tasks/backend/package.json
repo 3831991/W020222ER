@@ -4,19 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm app.js",
-    "start:prod": "node -r esm app.js",
+    "start": "cross-env NODE_ENV=development nodemon app.js",
+    "start:prod": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
-    "esm": "^3.2.25",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }

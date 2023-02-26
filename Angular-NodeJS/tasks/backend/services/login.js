@@ -1,8 +1,8 @@
-import { con } from '../sqlConnect';
+const con = require('../sqlConnect').con;
 
 // פונקציה לקבלת סטטוס החיבור של היוזר
 // تحاول الوظيفة الحصول على حالة اتصال المستخدم
-export function getLoginStatus(req, res) {
+exports.getLoginStatus = function(req, res) {
     if (req.session.user) {
         res.send({
             status: 'success',
@@ -15,14 +15,14 @@ export function getLoginStatus(req, res) {
     }
 }
 
-export function logout(req, res) {
+exports.logout = function(req, res) {
     // בהתנתקות אנחנו פשוט מוחקים את המשתנה של היוזר מהסשיין
     // عند قطع الاتصال ، نحذف ببساطة متغير المستخدم من الجلسة
     delete req.session.user;
     res.send();
 }
 
-export function login(req, res) {
+exports.login = function(req, res) {
     // בתור התחלה אנחנו מוחקים את המשתמש הנוכחי מהסשיין
     // لنبدأ بحذف المستخدم الحالي من الجلسة
     delete req.session.user;
