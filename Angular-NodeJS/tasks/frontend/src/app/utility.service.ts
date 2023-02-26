@@ -8,6 +8,13 @@ export class UtilityService {
     private user?: User;
     cartAmount: number = 0;
 
+    isLoader?: boolean;
+
+    loader(isStart: boolean) {
+        this.isLoader = isStart;
+        document.body.style.overflow = isStart ? 'hidden' : 'initial';
+    }
+
     setUser(user?: User) {
         this.user = user;
     }

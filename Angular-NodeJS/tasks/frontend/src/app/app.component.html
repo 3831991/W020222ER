@@ -14,3 +14,7 @@
 <div *ngIf="!utility.getUser()">
     <router-outlet></router-outlet>
 </div>
+
+<div class="loaderFrame" *ngIf="utility.isLoader">
+    <div class="loader"></div>
+</div>

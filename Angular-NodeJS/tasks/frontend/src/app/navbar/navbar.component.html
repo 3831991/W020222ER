@@ -6,12 +6,12 @@
     </div>
 
     <a *ngFor="let item of menu" [routerLink]="item.route" [class.navActive]="active == item.route">
-        <i class="fas fa-{{ item.icon }}"></i> {{ item.title }}
+        <i class="fas fa fa-{{ item.icon }}"></i> {{ item.title }}
     </a>
 </nav>
 
 <nav class="sidebar" [class.open]="isOpen">
     <a *ngFor="let item of sidebar" [routerLink]="item.route" [class.navActive]="active == item.route">
-        <i class="fas fa-{{ item.icon }}"></i> {{ item.title }} <span *ngIf="item.counter"> ({{ utility[item.counter] }})</span>
+        <i class="fas fa fa-{{ item.icon }}"></i> {{ item.title }} <span *ngIf="item.counter"> ({{ utility[item.counter] }})</span>
     </a>
 </nav>

@@ -44,8 +44,13 @@ app.listen(3000, () => {
     console.log('listening on 3000');
 });
 
+// app.use((req, res, next) => {
+//     console.log(req.method);
+//     console.log(req.url);
+//     setTimeout(next, 1000);
+// });
+
 app.get('/', (req, res) => {
-    console.log(process.env.LERNER, process.env.NODE_ENV)
     res.send("Hello World");
 });
 
