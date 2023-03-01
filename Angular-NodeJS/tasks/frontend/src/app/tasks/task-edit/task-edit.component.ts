@@ -54,12 +54,20 @@ export class TaskEditComponent {
         }
     }
 
-    getTask(id: string) {
+    getTask(id?: string | number) {
         const sub = this.http.get<Task>(`task/${id}`).subscribe(item => {
             this.task = item;
             this.buildForm(item);
             sub.unsubscribe();
         });
+    }
+
+    clear() {
+        if (this.isEditableState) {
+            this.getTask(this.task?.id);
+        } else {
+            this.buildForm();
+        }
     }
 
     constructor(private router: Router, private route: ActivatedRoute, private http: HttpService) {

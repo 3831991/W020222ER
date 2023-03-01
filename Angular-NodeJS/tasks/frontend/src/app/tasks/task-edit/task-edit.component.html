@@ -3,7 +3,7 @@
 
 <form *ngIf="form" [formGroup]="form">
     <div class="field">
-        <label>משימה:</label>
+        <label>משימה: <i class="fa fa-asterisk w3-text-red"></i></label>
         <input class="w3-input w3-border w3-round" type="text" formControlName="task">
     </div>
 
@@ -25,6 +25,8 @@
         <label>הערה:</label>
         <textarea class="w3-input w3-border w3-round" type="text" formControlName="remark"></textarea>
     </div>
+
+    <!-- <button class="w3-btn w3-red w3-round" (click)="clear()">איפוס</button> -->
 
     <button class="w3-btn w3-green w3-round w3-block" [disabled]="!form.valid" (click)="save()">שמירה <i class="fa fa-save"></i></button>
 </form>
