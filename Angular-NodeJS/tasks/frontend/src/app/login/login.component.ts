@@ -49,6 +49,7 @@ export class LoginComponent {
     constructor(private http: HttpService, private utility: UtilityService, private router: Router, private authService: SocialAuthService) { }
 
     ngOnInit() {
+        console.log(this.loginForm)
         if (this.utility.getUser()) {
             this.router.navigate(['']);
         }

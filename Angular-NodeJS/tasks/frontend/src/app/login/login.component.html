@@ -2,8 +2,9 @@
 
 <form [formGroup]="loginForm">
     <div class="field">
-        <label><i class="fa fa-user"></i> שם משתמש:</label>
+        <label><i class="fa fa-user"></i> שם משתמש: *</label>
         <input class="w3-input w3-border w3-round" type="text" formControlName="userName">
+        <div *ngIf="loginForm.controls.userName.status == 'INVALID'">שדה חובה</div>
     </div>
 
     <div class="field">

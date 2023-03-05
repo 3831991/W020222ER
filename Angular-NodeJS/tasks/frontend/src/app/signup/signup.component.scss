@@ -26,3 +26,8 @@ form {
         }
     }
 }
+
+input.ng-dirty.ng-invalid {
+    border: 2px solid red !important;
+    outline: none !important;
+}
