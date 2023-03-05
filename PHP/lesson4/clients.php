@@ -1,10 +1,41 @@
 <?
     require "./sqlConnect.php";
 
-    $result = mysqli_query($link, "SELECT * FROM `clients`");
+    // Select all.
+    // $arr = $db->select("clients", "*");
 
-    // המרת הנתונים למערך של אובייקטים
-    $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    // קבלת הכל (עם בורר עמודות)
+    $arr = $db->select("clients", [
+        "id [Int]",
+        "firstName",
+        "lastName",
+        "phone",
+        "email",
+        "city",
+        "isFavorite [Bool]",
+    ]);
+
+    // קבלת אובייקט אחד
+    // אם לא קיים - מחזיר NULL
+    // $single = $db->get("clients", [
+    //     "id [Int]",
+    //     "firstName",
+    //     "lastName",
+    //     "phone",
+    //     "email",
+    //     "city",
+    //     "isFavorite [Bool]",
+    // ], [
+    //     "id" => 500,
+    // ]);
+
+    // אם קיים מחזיר True - ולהיפף
+    // $isExist = $db->has("clients", [
+    //     "id" => 6,
+    // ]);
+
+
+    // $result = $db->debug()->sum("clients", "id");
 ?>
 
 <!DOCTYPE html>
