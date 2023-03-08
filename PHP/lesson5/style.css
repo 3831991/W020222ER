@@ -1,0 +1,36 @@
+body {
+    background: #e0d5f1;
+    direction: rtl;
+}
+
+.navbar {
+    background-color: #673ab7 !important;
+    border-top: 1px solid #9b9d9e;
+}
+
+.container {
+    margin-top: 32px;
+    min-height: 400px;
+}
+
+.container .card {
+    width: 500px;
+    margin: auto;
+    background: #673ab7;
+    color: white;
+    padding: 16px;
+}
+
+.container .card h1 {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0 8px 0;
+}
+
+.container .card button {
+    background: #673ab7;
+    color: white;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 12px;
+}

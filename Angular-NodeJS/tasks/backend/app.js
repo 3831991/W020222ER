@@ -9,12 +9,6 @@ const session = require('express-session');
 
 const app = express();
 
-// const unGuards = [
-//     '/login',
-//     '/logout',
-//     '/signup',
-// ];
-
 app.use(session({
     secret: 'my-secret',
     name: 'mySession',
@@ -30,15 +24,6 @@ app.use(cors({
 }));
 
 app.use(express.json());
-
-// // פונקצית ביניים הבודקת את ההרשאות באופן גורף - לפני שהיא ניגשת בכלל לפונקציות
-// app.use((req, res, next) => {
-//     if (unGuards.includes(req.url) || req.session.user) {
-//         next();
-//     } else {
-//         res.sendStatus(401);
-//     }
-// });
 
 app.listen(3000, () => {
     console.log('listening on 3000');
