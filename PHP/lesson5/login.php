@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html>
 
 <head>
     <? require 'template/meta.php'; ?>
