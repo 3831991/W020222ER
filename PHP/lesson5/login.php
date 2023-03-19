@@ -16,6 +16,7 @@
             "id [Int]",
             "fullName",
             "email",
+            "isAdmin [Bool]",
         ], [
             "AND" => [
                 "email" => $_POST['email'],

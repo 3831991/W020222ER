@@ -11,7 +11,9 @@
     <? include 'template/navbar.php'; ?>
     
     <div class="container">
-        <h1>אין עדיין תוכן....</h1>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laudantium quo veniam ratione vero culpa modi error repellendus, corrupti possimus fugiat molestiae consequatur laboriosam quisquam consequuntur, dignissimos optio nulla velit.</h1>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laudantium quo veniam ratione vero culpa modi error repellendus, corrupti possimus fugiat molestiae consequatur laboriosam quisquam consequuntur, dignissimos optio nulla velit.</h1>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laudantium quo veniam ratione vero culpa modi error repellendus, corrupti possimus fugiat molestiae consequatur laboriosam quisquam consequuntur, dignissimos optio nulla velit.</h1>
     </div>
 
     <? include 'template/footer.php'; ?>
