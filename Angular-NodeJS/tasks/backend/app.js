@@ -25,9 +25,15 @@ app.use(cors({
 
 app.use(express.json());
 
-app.listen(3000, () => {
-    console.log('listening on 3000');
-});
+if (process.env.NODE_ENV == 'development') {
+    app.listen(3000, () => {
+        console.log('listening on 3000');
+    });
+} else {
+    app.listen(() => {
+        console.log('listening...');
+    });
+}
 
 // app.use((req, res, next) => {
 //     console.log(req.method);
