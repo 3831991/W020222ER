@@ -1,6 +1,21 @@
 <?
     require 'services/sqlConnect.php';
 
+    if (!isset($_GET['id'])) {
+        header("HTTP/1.0 404 Not Found");
+        die();
+    }
+
+    if (isset($_POST['publishedTime'], $_POST['title'], $_POST['description'])) {
+        $db->update("articles", [
+            "publishedTime" => $_POST['publishedTime'],
+            "title" => $_POST['title'],
+            "description" => $_POST['description'],
+        ], [
+            "id" => $_GET['id'],
+        ]);
+    }
+
     $article = null;
 
     if (isset($_GET['id'])) {
@@ -34,7 +49,7 @@
     <? include 'template/header.php'; ?>
     <? include 'template/navbar.php'; ?>
     
-    <form class="container" method="POST" action="./contact.php">
+    <form class="container" method="POST" action="./articles-edit.php?id=<?= $article['id'] ?>">
         <div class="card bg-dark">
             <h1>עריכת כתבה [<?= $article['id'] ?>]</h1>
             <p style="text-align: center;">תאריך יצירה: <?= date("d/m/Y", strtotime($article['addedTime'])) ?></p>

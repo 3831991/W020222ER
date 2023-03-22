@@ -43,7 +43,13 @@
     <? include 'template/header.php'; ?>
     <? include 'template/navbar.php'; ?>
     
+    <br>
+    <h1>ניהול כתבות</h1>
+
     <div class="container">
+        <a class="btn btn-success" href="articles-new.php">הוספת כתבה <i class="fa fa-plus"></i></a>
+        <br><br>
+
         <table class="table table-striped">
             <thead>
                 <tr>

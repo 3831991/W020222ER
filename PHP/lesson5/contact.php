@@ -7,6 +7,10 @@
 </head>
 
 <?
+    if (isset($_POST['refresh'])) {
+        unset($_SESSION['isSended']);
+    }
+
     require 'services/sqlConnect.php';
 
     if (isset($_POST['fullName'], $_POST['email'], $_POST['body']) && !isset($_SESSION['isSended'])) {
@@ -31,6 +35,13 @@
 
     <? if (isset($_SESSION['isSended'])) { ?>
         <div class="container">
+            <form action="./contact.php" method="POST">
+                <input type="hidden" name="refresh">
+                <button class="btn btn-success">טופס נוסף <i class="fa fa-plus"></i></button>
+            </form>
+
+            <br><br>
+
             <h1>הטופס נשלח בהצלחה</h1>
         </div>
     <? } else { ?>
