@@ -7,10 +7,20 @@
     }
 
     if (isset($_POST['publishedTime'], $_POST['title'], $_POST['description'])) {
+        $image = $_FILES['image'];
+        $imageName = "";
+        $allowed = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif'];
+
+        if (in_array($image['type'], $allowed)) {
+            move_uploaded_file($image['tmp_name'], 'images/' . $image['name']);
+            $imageName = $image['name'];
+        }
+
         $db->update("articles", [
             "publishedTime" => $_POST['publishedTime'],
             "title" => $_POST['title'],
             "description" => $_POST['description'],
+            'image' => $imageName,
         ], [
             "id" => $_GET['id'],
         ]);
@@ -25,6 +35,7 @@
             "publishedTime",
             "title",
             "description",
+            "image",
             "content",
         ], [
             "id" => $_GET['id'],
@@ -49,7 +60,7 @@
     <? include 'template/header.php'; ?>
     <? include 'template/navbar.php'; ?>
     
-    <form class="container" method="POST" action="./articles-edit.php?id=<?= $article['id'] ?>">
+    <form class="container" method="POST" action="./articles-edit.php?id=<?= $article['id'] ?>" enctype="multipart/form-data">
         <div class="card bg-dark">
             <h1>עריכת כתבה [<?= $article['id'] ?>]</h1>
             <p style="text-align: center;">תאריך יצירה: <?= date("d/m/Y", strtotime($article['addedTime'])) ?></p>
@@ -61,6 +72,14 @@
                 <div class="mb-3">
                     <label class="form-label">כותרת</label>
                     <input type="text" class="form-control" name="title" value="<?= $article['title'] ?>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">תמונה</label>
+                    
+                    <? if ($article['image']) { ?>
+                        <img src="images/<?= $article['image'] ?>" width="100%">
+                    <? } ?>
+                    <input type="file" class="form-control" name="image" value="<?= $article['image'] ?>" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">תיאור</label>
