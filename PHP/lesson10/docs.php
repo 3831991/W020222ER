@@ -9,6 +9,17 @@
         "deal" => 'חשבון עסקה',
     ]);
 
+    if (isset($_POST['doctype'], $_POST['docnum'])) {
+        // מחיקת מסמך
+        icount("https://api.icount.co.il/api/v3.php/doc/close", [
+            "cid" => "fullstack",
+            "user" => "elyashiv383",
+            "pass" => "Aa123456%",
+            "doctype" => $_POST['doctype'],
+            "docnum" => $_POST['docnum'],
+        ]);
+    }
+
     // קבלת כל המסמכים
     $docsResult = icount("https://api.icount.co.il/api/v3.php/doc/search", [
         "cid" => "fullstack",
@@ -70,8 +81,14 @@
                         <td><?= date("d/m/Y", strtotime($item['dateissued'])) ?></td>
                         <td><?= DOCS[$item['doctype']] ?></td>
                         <td><?= number_format($item['total'], $isDecimal) ?> <?= $item['currency'] ?></td>
-                        <td>
+                        <td style="display: flex; text-align: left;">
                             <a class="btn btn-success" target="_blank" href="./docs-show.php?doctype=<?= $item['doctype'] ?>&docnum=<?= $item['docnum'] ?>">הצג</a>
+
+                            <form action="./docs.php" method="POST">
+                                <input type="hidden" name="doctype" value="<?= $item['doctype'] ?>">
+                                <input type="hidden" name="docnum" value="<?= $item['docnum'] ?>">
+                                <button class="btn btn-danger">מחק</button>
+                            </form>
                         </td>
                     </tr>
                 <? } ?>
