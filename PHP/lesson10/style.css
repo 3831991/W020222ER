@@ -1,0 +1,48 @@
+body {
+    direction: rtl;
+}
+
+.navbar {
+    background-color: #673ab7 !important;
+    border-top: 1px solid #9b9d9e;
+}
+
+.container {
+    margin-top: 32px;
+    min-height: 400px;
+}
+
+.container .card {
+    width: 500px;
+    margin: auto;
+    color: white;
+    padding: 16px;
+    background-image: linear-gradient(#FFBE55, #5f2c82);
+}
+
+.container .card h1 {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0 8px 0;
+}
+
+.container .card button {
+    background: #f8b857;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 12px;
+}
+
+.userName {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.col-sm-4 {
+    padding: 16px 8px;
+}
