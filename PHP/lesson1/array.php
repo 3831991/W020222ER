@@ -42,6 +42,21 @@
     // הוספת איבר למערך
     $person['age'] = 50;
 
+    $persons = [
+        [
+            "firstName" => "Dani",
+            "lastName" => "Shovevani",
+        ],
+        [
+            "firstName" => "Yossi",
+            "lastName" => "Kalman",
+        ],
+        [
+            "firstName" => "Shraga",
+            "lastName" => "Avshalomov",
+        ],
+    ];
+
     // לצורך המתכנת
     // echo var_dump($colors);
 
@@ -59,11 +74,17 @@
     //     echo "<p><b>$i: </b> $p</p>";
     // }
 
+    // foreach ($persons as &$p) {
+    //     $p['phone'] = "05050505050";
+    // }
+
+    // echo var_dump($persons);
+
     // $name = "שלום";
 
     // echo "אהלן" . " אהלן $name <br>";
 
     // echo "הגיל שלו הוא {$person['age']}";
 
-    echo var_dump($_SERVER['REMOTE_ADDR']);
+    // echo var_dump($_SERVER['REMOTE_ADDR']);
 ?>
