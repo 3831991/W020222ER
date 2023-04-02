@@ -1,9 +1,9 @@
 const banknotes = [200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.1];
-// const inventory = {};
 
-function showBanknotes() {
+function transaction() {
     let num = +document.querySelector("#num1").value;
     document.querySelector("#output1").innerHTML = '';
+    document.querySelector("#num1").value = '';
 
     const initialAmount = num;
     let result = 0;
@@ -16,7 +16,7 @@ function showBanknotes() {
 
         if (num >= n && inventory[n]) {
             document.querySelector("#output1").innerHTML += `<img src="./banknotes/img (${n}).png">`;
-            document.getElementById(`banknote_${n}`).value = --inventory[n];
+            document.getElementById(`banknote_${n}`).innerHTML = --inventory[n];
 
             result += n;
             num -= n;
@@ -44,25 +44,24 @@ function showBanknotes() {
         method: "POST",
         body: JSON.stringify(item),
     })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        });
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    });
 }
 
-function createInventory() {
-    let html = "<tr>";
+function inventoryInsert() {
+    const cash = {};
 
-    banknotes.forEach(n => {
-
-        html += `<td>
-                    <img src="./banknotes/img (${n}).png">
-                    <br> <input id="banknote_${n}" type="number" value="${inventory[n]}" onchange="inventory[${n}] = +this.value">
-                </td>`;
+    document.querySelectorAll("#inventoryInsert input").forEach(elem => {
+        cash[elem.id] = +elem.value;
     });
 
-    html += "</tr>";
-    document.querySelector("#inventory").innerHTML = html;
+    fetch("inventoryInsert.php", {
+        method: "POST",
+        body: JSON.stringify(cash),
+    })
+    .then(() => {
+        location.reload();
+    });
 }
-
-createInventory();
