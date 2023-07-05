@@ -9,11 +9,20 @@ const session = require('express-session');
 
 const app = express();
 
+// const unGuards = [
+//     '/login',
+//     '/logout',
+//     '/signup',
+// ];
+
+app.set('trust proxy', 1);
+
 app.use(session({
     secret: 'my-secret',
-    name: 'mySession',
+    name: 'lernerSession',
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
+    cookie: { sameSite: 'None', secure: true, httpOnly: true, maxAge: 600000 },
 }));
 
 app.use(cors({
@@ -25,23 +34,21 @@ app.use(cors({
 
 app.use(express.json());
 
-if (process.env.NODE_ENV == 'development') {
-    app.listen(3000, () => {
-        console.log('listening on 3000');
-    });
-} else {
-    app.listen(() => {
-        console.log('listening...');
-    });
-}
-
+// // פונקצית ביניים הבודקת את ההרשאות באופן גורף - לפני שהיא ניגשת בכלל לפונקציות
 // app.use((req, res, next) => {
-//     console.log(req.method);
-//     console.log(req.url);
-//     setTimeout(next, 1000);
+//     if (unGuards.includes(req.url) || req.session.user) {
+//         next();
+//     } else {
+//         res.sendStatus(401);
+//     }
 // });
 
+app.listen(3000, () => {
+    console.log('listening on 3000');
+});
+
 app.get('/', (req, res) => {
+    console.log(process.env.LERNER, process.env.NODE_ENV)
     res.send("Hello World");
 });
 
